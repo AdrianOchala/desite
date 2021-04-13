@@ -3,6 +3,7 @@
     <div class="content__left">
       <div class="content__text">
         <h1 class="content__title">
+          {{ $t("header.title") }}
           We create <br> amazing websites
         </h1>
         <p class="content__description">
