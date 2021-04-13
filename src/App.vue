@@ -1,12 +1,14 @@
 <template>
 
-    <TheNavigation></TheNavigation>
-    <h1>Test</h1>
-    <p style="height: 100vh">Elo ziomy</p>
-    <p id="test" style="height: 100vh">Test scroll</p>
-    <p style="height: 100vh">Elo ziomy</p>
-    <Header></Header>
-    <TheFooter></TheFooter>
+  <TheNavigation></TheNavigation>
+
+  <p id="test1" style="height: 100vh">Test1</p>
+  <p id="test2" style="height: 100vh; background-color: green">Test2</p>
+  <p id="test3" style="height: 100vh">Test3</p>
+  <p id="test4" style="height: 100vh">Test4</p>
+
+  <Header></Header>
+  <TheFooter></TheFooter>
 
 </template>
 
