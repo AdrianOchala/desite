@@ -3,7 +3,8 @@
     <h2>DESITE</h2>
 
     <nav>
-      <h3>test</h3>
+      <a href="#"></a>
+      <p>{{ $t("navigation.home") }}</p>
     </nav>
   </div>
 </template>
@@ -18,7 +19,7 @@ export default {
   .nav {
     display: flex;
     background-color: orangered;
-    width: 90%;
+    width: 90vw;
     margin: 0 auto;
 
     h2 {
@@ -30,7 +31,7 @@ export default {
     nav {
       display: flex;
       flex: 1;
-      justify-content: end;
+      justify-content: flex-end;
       background-color: green;
 
       h3 {
