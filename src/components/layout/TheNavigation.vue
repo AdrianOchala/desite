@@ -3,15 +3,39 @@
     <h2>DESITE</h2>
 
     <nav>
-      <a href="#"></a>
-      <p>{{ $t("navigation.home") }}</p>
+      <a href="#">{{ $t("navigation.home") }}</a>
+      <a href="#">{{ $t("navigation.about") }}</a>
+      <a href="#">{{ $t("navigation.portfolio") }}</a>
+      <a href="#">{{ $t("navigation.contact") }}</a>
+      <button @click="scroll">Test</button>
     </nav>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TheNavigation"
+  name: "TheNavigation",
+  data() {
+    return {
+      scrolled: false
+    }
+  },
+  methods: {
+    scroll() {
+      const el = document.getElementById('test');
+      el.scrollIntoView({behavior: "smooth"});
+    },
+    handleScroll ($event) {
+      console.log(window.scrollY);
+      console.log($event);
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 }
 </script>
 

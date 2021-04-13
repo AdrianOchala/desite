@@ -3,6 +3,9 @@
 		"title": "Title"
 	},
 	"navigation": {
-		"home": "Home"
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"portfolio": "Portfolio"
 	}
 }

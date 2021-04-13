@@ -3,6 +3,9 @@
 		"title": "tytuł"
 	},
 	"navigation": {
-		"home": "Strona Główna"
+		"about": "O nas",
+		"contact": "Kontakt",
+		"home": "Strona Główna",
+		"portfolio": "Portfolio"
 	}
 }
