@@ -18,7 +18,7 @@ export default {
   .nav {
     display: flex;
     background-color: orangered;
-    width: 90%;
+    width: 90vw;
     margin: 0 auto;
 
     h2 {

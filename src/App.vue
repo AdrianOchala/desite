@@ -1,20 +1,18 @@
 <template>
   <TheNavigation></TheNavigation>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <h1>Test</h1>
-  <p>Elo ziomy</p>
+  <Header></Header>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import TheNavigation from "@/components/layout/TheNavigation";
+import Header from "./components/Header";
 
 export default {
   name: 'App',
   components: {
+    Header,
     TheNavigation,
-    HelloWorld
   }
 }
 </script>
