@@ -1,4 +1,5 @@
 @import "src/styles/abstract/variables";
+@import "src/styles/base/typography";
 // for definitions like html, media queries, it will work across site
 *,
 *::after,
@@ -6,6 +7,9 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  color: white;
 }
 html {
   box-sizing: border-box;
