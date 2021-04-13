@@ -1,11 +1,11 @@
 <template>
 
     <TheNavigation></TheNavigation>
+    <Header></Header>
     <h1>Test</h1>
     <p style="height: 100vh">Elo ziomy</p>
     <p id="test" style="height: 100vh">Test scroll</p>
     <p style="height: 100vh">Elo ziomy</p>
-    <Header></Header>
     <TheFooter></TheFooter>
 
 </template>

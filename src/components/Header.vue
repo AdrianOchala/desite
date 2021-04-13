@@ -3,7 +3,6 @@
     <div class="content__left">
       <div class="content__text">
         <h1 class="content__title">
-          {{ $t("header.title") }}
           We create <br> amazing websites
         </h1>
         <p class="content__description">
@@ -13,7 +12,11 @@
 
     </div>
     <div class="content__right">
-      Lorem ipsum mada faka, Lorem ipsum mada faka Lorem ipsum mada faka, Lorem ipsum mada faka Lorem ipsum mada faka Lorem ipsum mada faka
+      <div class="content__image">
+        <img class="content__right-image" src="../images/header.png" alt="Header Photo">
+      </div>
+
+
     </div>
   </div>
 </template>
@@ -30,15 +33,13 @@ export default {
   margin-top: 5rem;
   width: 90vw;
   height: 80vh;
-  background-color: chocolate;
   display: flex;
   flex-direction: row;
 
   &__left{
     float: left;
-    background-color: cornflowerblue;
     margin-right: 1rem;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 5rem;
     height: 100%;
     width: 55%;
     display: flex;
@@ -46,7 +47,7 @@ export default {
 
     h1{
       font-weight: 600;
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     p{
@@ -56,12 +57,40 @@ export default {
 
   }
   &__right{
-    background-color: cornflowerblue;
     margin-left: 1rem;
     padding: 1rem;
     height: 100%;
     flex: 1;
+    display: flex;
+    //background-color: chocolate;
+
+    &-image{
+      //border: .3rem solid white;
+      //transform: skewX(20deg);
+    }
+
+    img{
+      height: 60vh;
+      align-self: center;
+
+    }
 
   }
+
+  &__image{
+    display: flex;
+  }
+  &__image::after{
+    content: "";
+    position: absolute;
+    width: 30vw;
+    height: 60vh;
+    //background-color: white;
+    border: .3rem solid white;
+    transform: skewX(15deg);
+    bottom: 15%;
+    right: 5%;
+  }
+
 }
 </style>

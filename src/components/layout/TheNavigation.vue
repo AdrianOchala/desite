@@ -28,6 +28,7 @@ export default {
     handleScroll ($event) {
       console.log(window.scrollY);
       console.log($event);
+
     }
   },
   created () {
