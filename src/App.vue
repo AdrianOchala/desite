@@ -1,20 +1,21 @@
 <template>
-  <TheNavigation></TheNavigation>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-  <h1>Test</h1>
-  <p>Elo ziomy</p>
+    <TheNavigation></TheNavigation>
+    <h1>Test</h1>
+    <p style="height: 100vh">Elo ziomy</p>
+    <p id="test" style="height: 100vh">Test scroll</p>
+    <p style="height: 100vh">Elo ziomy</p>
+    <TheFooter></TheFooter>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import TheNavigation from "@/components/layout/TheNavigation";
+import TheFooter from "@/components/layout/TheFooter";
 
 export default {
   name: 'App',
   components: {
-    TheNavigation,
-    HelloWorld
+    TheFooter,
+    TheNavigation
   }
 }
 </script>
@@ -22,4 +23,5 @@ export default {
 <style lang="scss">
 @import "styles/base/_base.scss";
 @import "styles/base/typography";
+
 </style>
