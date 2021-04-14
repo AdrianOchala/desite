@@ -3,7 +3,9 @@
 		"follow": "Follow us"
 	},
 	"header": {
-		"title": "Title"
+		"about": "About us",
+		"projects": "View projects",
+		"title": "We create amazing websites"
 	},
 	"navigation": {
 		"about": "About",

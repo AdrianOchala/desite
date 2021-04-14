@@ -2,18 +2,21 @@
   <div class="content">
     <div class="content__left">
       <div class="content__text">
-        <h1 class="content__title">
-          We create <br> amazing websites
+        <h1 class="content__text-title">
+          {{ $t("header.title") }}
         </h1>
-        <p class="content__description">
+        <p class="content__text-description">
           Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą.
         </p>
-      </div>
 
+          <a class="desiteButton" href="#test2">{{ $t("header.about") }} <span class="arrow1"></span><span class="arrow2"></span> </a>
+          <a class="desiteButton" href="#test3">{{ $t("header.projects") }} <span class="arrow1"></span><span class="arrow2"></span></a>
+
+      </div>
     </div>
     <div class="content__right">
       <div class="content__image">
-        <img class="content__right-image" src="../images/header.png" alt="Header Photo">
+        <img src="../images/header.png" alt="Header Photo">
       </div>
 
 
@@ -28,11 +31,12 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/styles/components/button";
 .content{
   margin: 0 auto;
   margin-top: 5rem;
   width: 90vw;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: row;
 
@@ -56,40 +60,40 @@ export default {
     }
 
   }
+  &__text{
+    &-title,
+    &-description{
+      position: relative;
+    }
+  }
+
   &__right{
     margin-left: 1rem;
     padding: 1rem;
     height: 100%;
     flex: 1;
     display: flex;
-    //background-color: chocolate;
-
-    &-image{
-      //border: .3rem solid white;
-      //transform: skewX(20deg);
-    }
-
-    img{
-      height: 60vh;
-      align-self: center;
-
-    }
+    position: relative;
 
   }
 
   &__image{
     display: flex;
+
+    img{
+      height: 60vh;
+      align-self: center;
+    }
   }
   &__image::after{
     content: "";
     position: absolute;
-    width: 30vw;
+    align-self: center;
     height: 60vh;
-    //background-color: white;
+    width: 28.5vw;
     border: .3rem solid white;
-    transform: skewX(15deg);
-    bottom: 15%;
-    right: 5%;
+    transform: skewX(14.5deg) translateY(3rem);
+    left: 12rem;
   }
 
 }
