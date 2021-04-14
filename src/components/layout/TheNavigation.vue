@@ -6,7 +6,7 @@
       <a class="links active" href="#home">{{ $t("navigation.home") }}</a>
       <a class="links" href="#test2">{{ $t("navigation.about") }}</a>
       <a class="links" href="#test3">{{ $t("navigation.portfolio") }}</a>
-      <a class="links" href="#test4">{{ $t("navigation.contact") }}</a>
+      <a class="links" href="#contact">{{ $t("navigation.contact") }}</a>
     </nav>
   </div>
 </template>

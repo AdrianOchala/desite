@@ -1,6 +1,6 @@
 <template>
   <footer id="footer" class="footer">
-    <h1>No heya</h1>
+    <a href="https://www.desite.pl">www.desite.pl</a>
   </footer>
 </template>
 
@@ -12,7 +12,16 @@ export default {
 
 <style lang="scss" scoped>
   .footer {
+    display: flex;
     width: 100%;
-    background-color: green;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      font-weight: 200;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
   }
 </style>
