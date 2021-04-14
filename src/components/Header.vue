@@ -8,9 +8,8 @@
         <p class="content__text-description">
           Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą.
         </p>
-
-          <a class="desiteButton" href="#test2">{{ $t("header.about") }} <span class="arrow1"></span><span class="arrow2"></span> </a>
-          <a class="desiteButton" href="#test3">{{ $t("header.projects") }} <span class="arrow1"></span><span class="arrow2"></span></a>
+          <Button :text=" $t('header.about') " href="#about"></Button>
+          <Button :text=" $t('header.projects') " href="#portfolio"></Button>
 
       </div>
     </div>
@@ -25,12 +24,14 @@
 </template>
 
 <script>
+import Button from "./Button";
 export default {
   name: "Header",
+  components: {Button}
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "src/styles/components/button";
 .content{
   margin: 0 auto;
@@ -82,6 +83,7 @@ export default {
 
     img{
       height: 60vh;
+      width: 35vw;
       align-self: center;
     }
   }
@@ -90,7 +92,7 @@ export default {
     position: absolute;
     align-self: center;
     height: 60vh;
-    width: 28.5vw;
+    width: 28vw;
     border: .3rem solid white;
     transform: skewX(14.5deg) translateY(3rem);
     left: 12rem;

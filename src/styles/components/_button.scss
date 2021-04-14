@@ -1,3 +1,5 @@
+$gradient: #6619b3;
+
 .arrow1{
   border: solid white;
   border-width: 0 0 .15rem 0;
@@ -14,12 +16,99 @@
   margin-left: .5rem;
   transform: translateX(-1.45rem) translateY(-.4rem) rotate(45deg) ;
 }
+
+
 .desiteButton{
   display: inline-block;
+  position: relative;
   text-decoration: none;
   font-size: 2rem;
   font-weight: 300;
   padding: 1.5rem 2.5rem 1.5rem 4rem;
   margin: 3rem 5rem;
-  border: .1rem solid white;
+  //border: .1rem solid white;
+  box-sizing: border-box;
+  border: 0;
+  box-shadow: inset 0 0 0 .2rem white;
+  transition: all .5s ease-out;
+
+  &:hover{
+      background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+.draw{
+  &::before,
+  &::after {
+    // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+    border: 2px solid transparent;
+    width: 0;
+    height: 0;
+  }
+
+  // (expands right, then down)
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  // (expands left, then up)
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+  // Hover styles
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+  }
+  &:hover::before {
+    border-top-color: $gradient; // Make borders visible
+    border-right-color: $gradient;
+    transition:
+            width 0.25s ease-out, // Width expands first
+            height 0.25s ease-out 0.25s; // And then height
+  }
+
+  &:hover::after {
+    border-bottom-color: $gradient; // Make borders visible
+    border-left-color: $gradient;
+    transition:
+            border-color 0s ease-out 0.5s, // Wait for ::before to finish before showing border
+            width 0.25s ease-out 0.5s, // And then exanding width
+            height 0.25s ease-out 0.75s; // And finally height
+  }
+}
+.meet {
+  // Start ::after in same position as ::before
+  &::after {
+    top: 0;
+    left: 0;
+  }
+
+  // Change colors
+  &:hover::before {
+    border-top-color: $gradient;
+    border-right-color: $gradient;
+  }
+
+  &:hover::after {
+    border-bottom-color: $gradient;
+    border-left-color: $gradient;
+    transition: // Animate height first, then width
+            height 0.25s ease-out,
+            width 0.25s ease-out 0.25s;
+  }
+
 }
