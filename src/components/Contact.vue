@@ -1,23 +1,44 @@
 <template>
   <div class="contact">
-    <div class="contact-form">
-
+    <div class="contact-container">
+      <h2>{{ $t("contact.contact") }}</h2>
+      <form class="contact-form" @submit.prevent="sendEmail">
+        <label>Name</label>
+        <input type="text" name="user_name">
+        <label>Email</label>
+        <input type="email" required name="user_email">
+        <label>Message</label>
+        <textarea required name="message"></textarea>
+        <input type="submit" value="Send">
+      </form>
     </div>
 
     <div class="contact-social">
       <h2>{{ $t("contact.follow") }}</h2>
       <p>Lorem ipsum faka maka kup mi składaka</p>
       <div class="contact-social-icons">
-        <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']" />
-        <font-awesome-icon class="icon" :icon="['fab', 'linkedin']" />
+        <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
+        <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
-  name: "Contact"
+  name: "Contact",
+  methods: {
+    sendEmail: (e) => {
+      emailjs.sendForm('service_275ecft', 'template_dm2kels', e.target, 'user_Glrid5hQCnoIO9RCdwtRz')
+          .then((result) => {
+            console.log('SUCCESS!', result.status, result.text);
+          }, (error) => {
+            console.log('FAILED...', error);
+          });
+    }
+  }
 }
 </script>
 
@@ -30,9 +51,23 @@ export default {
   width: 90vw;
   border: 1px solid #FFFFFF;
 
+  &-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+
   &-form {
     display: flex;
-    width: 65%;
+    flex-direction: column;
+
+    input {
+      color: black;
+    }
+
+    textarea {
+      color: black;
+    }
   }
 
   &-social {
