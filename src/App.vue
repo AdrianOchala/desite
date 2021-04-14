@@ -1,13 +1,10 @@
 <template>
-
   <TheNavigation></TheNavigation>
+  <Header id="home"></Header>
 
-  <p id="test1" style="height: 100vh">Test1</p>
   <p id="test2" style="height: 100vh; background-color: green">Test2</p>
   <p id="test3" style="height: 100vh">Test3</p>
   <p id="test4" style="height: 100vh">Test4</p>
-
-  <Header></Header>
   <TheFooter></TheFooter>
 
 </template>
@@ -19,12 +16,13 @@ import TheFooter from "@/components/layout/TheFooter";
 
 export default {
   name: 'App',
+  beforeCreate() {
+    scrollTo(0, 0);
+  },
   components: {
-
     Header,
     TheFooter,
     TheNavigation
-
   }
 }
 </script>
