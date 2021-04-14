@@ -4,7 +4,13 @@
 	},
 	"contact": {
 		"contact": "Kontakt",
-		"follow": "Śledź nas"
+		"email": "Twój E-mail (wymagany)",
+		"error": "Wiadomość nie została wysłana",
+		"follow": "Śledź nas",
+		"message": "Twoja Wiadomość",
+		"name": "Twoje Imię (wymagane)",
+		"send": "Wyślij",
+		"success": "Wiadomość została wysłana"
 	},
 	"header": {
 		"about": "O nas",

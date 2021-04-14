@@ -8,8 +8,8 @@
         <p class="content__text-description">
           Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą.
         </p>
-          <Button :text=" $t('header.about') " href="#about"></Button>
-          <Button :text=" $t('header.projects') " href="#portfolio"></Button>
+        <Button :text=" $t('header.about') " href="#about"></Button>
+        <Button :text=" $t('header.projects') " href="#portfolio"></Button>
 
       </div>
     </div>
@@ -25,6 +25,7 @@
 
 <script>
 import Button from "./Button";
+
 export default {
   name: "Header",
   components: {Button}
@@ -33,7 +34,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/components/button";
-.content{
+
+.content {
   margin: 0 auto;
   margin-top: 5rem;
   width: 90vw;
@@ -41,34 +43,33 @@ export default {
   display: flex;
   flex-direction: row;
 
-  &__left{
+  &__left {
     float: left;
-    margin-right: 1rem;
-    padding: 1rem 1rem 1rem 5rem;
     height: 100%;
     width: 55%;
     display: flex;
     align-items: center;
 
-    h1{
+    h1 {
       font-weight: 600;
       font-size: 5rem;
     }
 
-    p{
+    p {
       font-weight: 200;
       font-size: 2.5rem;
     }
 
   }
-  &__text{
+
+  &__text {
     &-title,
-    &-description{
+    &-description {
       position: relative;
     }
   }
 
-  &__right{
+  &__right {
     margin-left: 1rem;
     padding: 1rem;
     height: 100%;
@@ -78,16 +79,17 @@ export default {
 
   }
 
-  &__image{
+  &__image {
     display: flex;
 
-    img{
+    img {
       height: 60vh;
       width: 35vw;
       align-self: center;
     }
   }
-  &__image::after{
+
+  &__image::after {
     content: "";
     position: absolute;
     align-self: center;

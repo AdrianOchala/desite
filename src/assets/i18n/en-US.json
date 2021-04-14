@@ -4,7 +4,13 @@
 	},
 	"contact": {
 		"contact": "Contact",
-		"follow": "Follow us"
+		"email": "Your E-mail (required)",
+		"error": "The message was not sent",
+		"follow": "Follow us",
+		"message": "Your Message",
+		"name": "Your Name (required)",
+		"send": "Send",
+		"success": "Message was sent"
 	},
 	"header": {
 		"about": "About us",

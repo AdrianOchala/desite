@@ -3,13 +3,10 @@
     <div class="contact-container">
       <h2>{{ $t("contact.contact") }}</h2>
       <form class="contact-form" @submit.prevent="sendEmail">
-        <label>Name</label>
-        <input type="text" name="user_name">
-        <label>Email</label>
-        <input type="email" required name="user_email">
-        <label>Message</label>
-        <textarea required name="message"></textarea>
-        <input type="submit" value="Send">
+        <input :placeholder="$t('contact.name')" type="text" required name="user_name">
+        <input :placeholder="$t('contact.email')" type="email" required name="user_email">
+        <textarea :placeholder="$t('contact.message')" required name="message"></textarea>
+        <button :disabled="isSend" :class="{ disabled: isSend, active: !isSend}" type="submit">{{ $t('contact.send') }}</button>
       </form>
     </div>
 
@@ -22,6 +19,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -29,12 +27,20 @@ import emailjs from 'emailjs-com';
 
 export default {
   name: "Contact",
+  data() {
+    return {
+    isSend: false
+    }
+  },
   methods: {
-    sendEmail: (e) => {
+    sendEmail(e) {
       emailjs.sendForm('service_275ecft', 'template_dm2kels', e.target, 'user_Glrid5hQCnoIO9RCdwtRz')
           .then((result) => {
+            this.isSend = true;
+            this.$toast.success(this.$t('contact.success'));
             console.log('SUCCESS!', result.status, result.text);
           }, (error) => {
+            this.$toast.error(this.$t('contact.error'));
             console.log('FAILED...', error);
           });
     }
@@ -43,6 +49,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/abstract/variables";
+.disabled {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: $color-grey;
+  border: 3px solid $color-grey;
+  transition: all 1s;
+  border-radius: 5px;
+  letter-spacing: .2rem;
+  font-size: 1.5rem;
+}
+
+.input-button {
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+  background-color: transparent;
+}
+
 .contact {
   display: flex;
   flex-direction: row;
@@ -50,6 +80,13 @@ export default {
   height: 60vh;
   width: 90vw;
   border: 1px solid #FFFFFF;
+
+  h2 {
+    font-weight: 600;
+    font-size: 5rem;
+    text-align: center;
+    margin: 4rem 0;
+  }
 
   &-container {
     display: flex;
@@ -59,14 +96,55 @@ export default {
 
   &-form {
     display: flex;
+    width: 50%;
+    margin: 0 auto;
+    flex: 1;
     flex-direction: column;
 
     input {
-      color: black;
+      margin-bottom: 4rem;
+      padding: 1rem;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $color-grey;
+
+      &:focus {
+        border: 1px solid $color-purple;
+      }
     }
 
     textarea {
-      color: black;
+      padding: 1rem;
+      height: 5rem;
+      background-color: transparent;
+      resize: none;
+      border: none;
+      border-bottom: 1px solid $color-grey;
+
+      &:focus {
+        border: 1px solid $color-purple;
+      }
+    }
+
+    .active {
+      margin-top: auto;
+      margin-bottom: 2rem;
+      padding: 2rem;
+      margin-left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      color: $color-grey;
+      border: 3px solid $color-grey;
+      transition: all 1s;
+      border-radius: 5px;
+      letter-spacing: .2rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        border: 3px solid $color-purple;
+        color: darken($color-purple, 10);
+      }
     }
   }
 
@@ -103,6 +181,7 @@ export default {
       }
     }
   }
+
 }
 
 </style>
