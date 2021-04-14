@@ -2,9 +2,7 @@
   <TheNavigation></TheNavigation>
   <Header id="home"></Header>
   <About id="about"></About>
-
-  <p id="test2" style="height: 100vh; background-color: green">Test2</p>
-  <p id="test3" style="height: 100vh">Test3</p>
+  <h1 style="height: 100vh" id="portfolio">eee</h1>
   <contact id="contact"></contact>
   <TheFooter></TheFooter>
 

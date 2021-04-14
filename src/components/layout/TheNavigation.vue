@@ -4,8 +4,8 @@
 
     <nav>
       <a class="links active" href="#home">{{ $t("navigation.home") }}</a>
-      <a class="links" href="#test2">{{ $t("navigation.about") }}</a>
-      <a class="links" href="#test3">{{ $t("navigation.portfolio") }}</a>
+      <a class="links" href="#about">{{ $t("navigation.about") }}</a>
+      <a class="links" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
       <a class="links" href="#contact">{{ $t("navigation.contact") }}</a>
     </nav>
   </div>
@@ -87,6 +87,7 @@ export default {
   padding: 2rem 0;
   transform: translateX(-50%);
   transition: all 1s ease-in;
+  z-index: 9999;
 
   &::after {
     content: "";
@@ -109,6 +110,7 @@ export default {
   padding: 4rem 0;
   transform: translateX(-50%);
   transition: all 1s ease-in;
+  z-index: 9999;
 
   &::after {
     content: "";
