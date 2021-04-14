@@ -1,6 +1,8 @@
 {
 	"header": {
-		"title": "tytuł"
+		"about": "O nas",
+		"projects": "Nasze projekty",
+		"title": "Tworzymy wyjątkowe strony internetowe"
 	},
 	"navigation": {
 		"about": "O nas",
