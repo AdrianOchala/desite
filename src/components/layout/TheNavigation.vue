@@ -25,18 +25,13 @@ export default {
       const el = document.getElementById(id);
       el.scrollIntoView({behavior: "smooth"});
     },
-    test() {
+    addActive() {
      this.list.forEach((list) => {
         const href = list.href.split('#')[1];
-        const element = document.getElementById(href).getBoundingClientRect();
-        const top = element.top;
-        const bottom = element.bottom;
-        if (window.scrollY >= top && window.scrollY < bottom) {
-          // if (href === 'test4') {
-          //   console.log("top:" + top);
-          //   console.log("bottom:" + bottom);
-          //   console.log("tera:" + window.scrollY);
-          // }
+        const element = document.getElementById(href);
+        const top = element.offsetTop;
+        const height = element.offsetHeight;
+        if (window.scrollY >= top && window.scrollY < top + height) {
           list.classList.add('active');
         } else {
           list.classList.remove('active');
@@ -48,10 +43,10 @@ export default {
     this.list = document.querySelectorAll('.links');
   },
   created() {
-    window.addEventListener('scroll', this.test);
+    window.addEventListener('scroll', this.addActive);
   },
   unmounted() {
-    window.removeEventListener('scroll', this.test);
+    window.removeEventListener('scroll', this.addActive);
   }
 }
 </script>
