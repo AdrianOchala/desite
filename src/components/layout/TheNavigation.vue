@@ -1,13 +1,13 @@
 <template>
   <div class="nav" id="nav">
-    <h2>DESITE</h2>
+    <a class="logo" href="#" @click="scrollTo(0, 0)">DESITE</a>
 
     <nav>
       <a class="links active" href="#home">{{ $t("navigation.home") }}</a>
       <a class="links" href="#about">{{ $t("navigation.about") }}</a>
       <a class="links" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
       <a class="links" href="#contact">{{ $t("navigation.contact") }}</a>
-      <select  v-model="selected">
+      <select v-model="selected">
         <option value="pl">PL</option>
         <option value="en">EN</option>
       </select>
@@ -34,7 +34,7 @@ export default {
   methods: {
     addActive() {
       const nav = document.getElementById('nav');
-      if (window.scrollY >= 50) {
+      if (window.scrollY >= 100) {
         nav.classList.remove('nav');
         nav.classList.add('scrolling');
       } else {
@@ -77,6 +77,14 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/abstract/variables";
+
+.logo {
+  font-family: Montserrat, sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
 .active {
   background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
   -webkit-background-clip: text;
@@ -139,12 +147,6 @@ export default {
   }
 }
 
-h2 {
-  font-family: Montserrat, sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
-}
-
 nav {
   font-size: 1.3rem;
   display: grid;
@@ -173,7 +175,7 @@ nav {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;       /* Remove default arrow */
+  appearance: none; /* Remove default arrow */
   border: 3px solid $color-purple;
   background-color: transparent;
   text-align: center;
