@@ -1,5 +1,5 @@
 <template>
-  <TheNavigation></TheNavigation>
+<TheNavigation></TheNavigation>
   <Header id="home"></Header>
   <About id="about"></About>
   <Portfolio id="portfolio"></Portfolio>
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import TheNavigation from "@/components/layout/TheNavigation";
-import Header from "./components/Header";
 import TheFooter from "@/components/layout/TheFooter";
-import Contact from "@/components/Contact";
-import About from "./components/About";
 import Portfolio from "@/components/Portfolio";
+import TheNavigation from "@/components/layout/TheNavigation";
+import Header from "@/components/Header";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
 
 export default {
   name: 'App',
@@ -22,12 +22,12 @@ export default {
     scrollTo(0, 0);
   },
   components: {
-    Portfolio,
     Contact,
     About,
     Header,
+    TheNavigation,
+    Portfolio,
     TheFooter,
-    TheNavigation
   }
 }
 </script>
@@ -35,5 +35,6 @@ export default {
 <style lang="scss">
 @import "styles/base/_base.scss";
 @import "styles/base/typography";
+@import "styles/abstract/mixins";
 
 </style>

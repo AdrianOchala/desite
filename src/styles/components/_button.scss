@@ -1,4 +1,5 @@
 $gradient: #6619b3;
+@import "src/styles/abstract/mixins";
 
 .arrow1{
   border: solid white;
@@ -31,6 +32,10 @@ $gradient: #6619b3;
   border: 0;
   box-shadow: inset 0 0 0 .2rem white;
   transition: all .5s ease-out;
+
+  @include respond(big-desktop) {
+    margin: 3rem 1rem;
+  }
 
   &:hover{
       background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);

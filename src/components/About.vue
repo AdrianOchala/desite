@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/styles/abstract/mixins";
 @import "src/styles/components/button";
 .content{
   margin: 0 auto;
@@ -50,11 +51,19 @@ export default {
     h1{
       font-weight: 600;
       font-size: 5rem;
+
+      @include respond(big-desktop) {
+        font-size: 4rem;
+      }
     }
 
     p{
       font-weight: 200;
       font-size: 2.5rem;
+
+      @include respond(big-desktop) {
+        font-size: 2rem;
+      }
     }
 
   }
@@ -82,6 +91,11 @@ export default {
       height: 60vh;
       width: 35vw;
       align-self: center;
+
+      @include respond(big-desktop) {
+        height: 40vh;
+        width: 30vw;
+      }
     }
   }
   &__image::after{
@@ -93,6 +107,11 @@ export default {
     border: .3rem solid white;
     transform: skewX(-14.5deg) translateY(-3rem);
     left: 12rem;
+
+    @include respond(big-desktop) {
+      height: 40vh;
+      width: 23vw;
+    }
   }
 
 }

@@ -190,6 +190,12 @@ export default {
 
       .icon {
         cursor: pointer;
+        transition: all .5s;
+
+        &:hover, &:active {
+          font-size: 8rem;
+          border: 2px solid $color-purple;
+        }
       }
     }
   }

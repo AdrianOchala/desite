@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
-    <Carousel class="portfolio_carousel" :items-to-show="2" :wrap-around="true">
+    <Carousel class="portfolio_carousel" :items-to-show="2.5" :wrap-around="true">
       <Slide v-for="slide in slide" :key="slide">
         <div class="portfolio_box">
           <img class="portfolio_box" :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
@@ -22,6 +22,11 @@ import {Carousel, Navigation, Slide} from 'vue3-carousel';
 
 export default {
   name: "Portfolio",
+  components: {
+    Carousel,
+    Slide,
+    Navigation,
+  },
   data() {
     return {
       currentSlide: null,
@@ -39,17 +44,14 @@ export default {
     goToUrl(url) {
       window.location.href = url;
     }
-  },
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-  },
+  }
 }
 </script>
 
 <style lang="scss">
 @import "src/styles/abstract/variables";
+@import "src/styles/abstract/mixins";
+
 .portfolio {
   height: 100vh;
   display: flex;
@@ -65,7 +67,11 @@ export default {
 
   &_carousel {
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
+
+    @media only screen and (max-width: 1400px) {
+      width: 90%;
+    }
   }
 
 
@@ -74,6 +80,17 @@ export default {
     width: auto;
     position: relative;
     transition: all 1s;
+
+    @media only screen and (max-width: 910px) {
+      height: auto;
+      width: 20rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      height: auto;
+      width: 13rem;
+    }
+
 
     &:hover button {
       display: block;
@@ -105,6 +122,17 @@ export default {
     letter-spacing: .2rem;
     font-size: 1.5rem;
     cursor: pointer;
+
+    @media only screen and (max-width: 910px) {
+      font-size: 1.5rem;
+      padding: .5rem;
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: .7rem;
+      padding: .5rem;
+    }
 
     &:hover {
       background-color: rgba(255, 255, 255, .7);
