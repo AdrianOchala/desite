@@ -1,7 +1,7 @@
 <template>
   <div class="portfolio">
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
-    <Carousel class="portfolio_carousel" :items-to-show="5" :wrap-around="true">
+    <Carousel class="portfolio_carousel" :items-to-show="2" :wrap-around="true">
       <Slide v-for="slide in slide" :key="slide">
         <img :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
       </Slide>
@@ -58,19 +58,19 @@ export default {
 
   &_carousel {
     margin: 0 auto;
-    width: 60%;
+    width: 50%;
   }
 
   &_box {
-    height: 30rem;
-    width: 15rem;
+    height: 50rem;
+    width: auto;
     background-color: green;
     transform: translateZ(-10rem);
   }
 
   &_box2 {
-    height: 30rem;
-    width: 15rem;
+    height: 50rem;
+    width: auto;
     background-color: green;
     transform: perspective(400px) translateZ(-100px);
   }
