@@ -5,7 +5,7 @@
       <Slide v-for="slide in slide" :key="slide">
         <div class="portfolio_box">
           <img class="portfolio_box" :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
-          <button @click="goToUrl(slide.url)" class="portfolio-visit">Odwiedź stronę</button>
+          <button @click="goToUrl(slide.url)" class="portfolio-visit">{{ $t('portfolio.visit') }}</button>
         </div>
       </Slide>
 

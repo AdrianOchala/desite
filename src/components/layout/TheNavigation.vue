@@ -7,6 +7,10 @@
       <a class="links" href="#about">{{ $t("navigation.about") }}</a>
       <a class="links" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
       <a class="links" href="#contact">{{ $t("navigation.contact") }}</a>
+      <select  v-model="selected">
+        <option value="pl">PL</option>
+        <option value="en">EN</option>
+      </select>
     </nav>
   </div>
 </template>
@@ -17,7 +21,14 @@ export default {
   data() {
     return {
       scrolled: false,
-      list: null
+      list: null,
+      selected: "pl"
+    }
+  },
+  watch: {
+    selected() {
+      this.$i18n.locale = this.selected;
+      localStorage.setItem("locale", this.selected);
     }
   },
   methods: {
@@ -52,6 +63,9 @@ export default {
     this.list = document.querySelectorAll('.links');
   },
   created() {
+    if (localStorage.getItem("locale")) {
+      this.selected = localStorage.getItem("locale") || "pl";
+    }
     window.addEventListener('scroll', this.addActive);
     window.addEventListener('click', this.removeHash);
   },
@@ -62,6 +76,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "src/styles/abstract/variables";
 .active {
   background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
   -webkit-background-clip: text;
@@ -153,5 +168,20 @@ nav {
     font-family: Mulish, sans-serif;
     font-weight: 300;
   }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  border: 3px solid $color-purple;
+  background-color: transparent;
+  text-align: center;
+}
+
+option {
+  border: 2px solid $color-purple;
+  background-color: black;
+  margin: 0 auto;
 }
 </style>

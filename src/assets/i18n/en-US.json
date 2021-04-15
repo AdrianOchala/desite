@@ -24,6 +24,7 @@
 		"portfolio": "Portfolio"
 	},
 	"portfolio": {
-		"title": "Our projects"
+		"title": "Our projects",
+		"visit": "Visit the site"
 	}
 }

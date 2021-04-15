@@ -24,6 +24,7 @@
 		"portfolio": "Portfolio"
 	},
 	"portfolio": {
-		"title": "Nasze projekty"
+		"title": "Nasze projekty",
+		"visit": "Odwiedź stronę"
 	}
 }
