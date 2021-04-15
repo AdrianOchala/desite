@@ -89,7 +89,7 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  height: 60vh;
+  height: 70vh;
   width: 90vw;
   border: 1px solid #FFFFFF;
 
