@@ -3,7 +3,7 @@
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
     <Carousel class="portfolio_carousel" :items-to-show="5" :wrap-around="true">
       <Slide v-for="slide in slide" :key="slide">
-        <img :class="slide.class" src="../images/portfolio/termobudowa.png">
+        <img :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
       </Slide>
 
       <template #addons>
@@ -24,12 +24,12 @@ export default {
     return {
       currentSlide: null,
     slide: [
-      { img: "../images/portfolio/lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "../images/portfolio/termobudowa.png", class: "portfolio_box2"},
-      { img: "../images/portfolio/lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "../images/portfolio/termobudowa.png", class: "portfolio_box2"},
-      { img: "../images/portfolio/lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "../images/portfolio/termobudowa.png", class: "portfolio_box2"}
+      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
+      { img: "termobudowa.png", class: "portfolio_box2"},
+      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
+      { img: "termobudowa.png", class: "portfolio_box2"},
+      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
+      { img: "termobudowa.png", class: "portfolio_box2"}
     ]
     }
   },
