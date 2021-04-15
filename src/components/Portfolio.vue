@@ -3,7 +3,10 @@
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
     <Carousel class="portfolio_carousel" :items-to-show="2" :wrap-around="true">
       <Slide v-for="slide in slide" :key="slide">
-        <img :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
+        <div class="portfolio_box">
+          <img class="portfolio_box" :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
+          <button @click="goToUrl(slide.url)" class="portfolio-visit">Odwiedź stronę</button>
+        </div>
       </Slide>
 
       <template #addons>
@@ -17,20 +20,24 @@
 <script>
 import {Carousel, Navigation, Slide} from 'vue3-carousel';
 
-
 export default {
   name: "Portfolio",
   data() {
     return {
       currentSlide: null,
     slide: [
-      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "termobudowa.png", class: "portfolio_box2"},
-      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "termobudowa.png", class: "portfolio_box2"},
-      { img: "lapiemy-szczyty.png", class: "portfolio_box"},
-      { img: "termobudowa.png", class: "portfolio_box2"}
+      { img: "lapiemy-szczyty.png"},
+      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
+      { img: "lapiemy-szczyty.png"},
+      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
+      { img: "lapiemy-szczyty.png"},
+      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
     ]
+    }
+  },
+  methods: {
+    goToUrl(url) {
+      window.location.href = url;
     }
   },
   components: {
@@ -61,19 +68,53 @@ export default {
     width: 50%;
   }
 
+
   &_box {
     height: 50rem;
     width: auto;
-    background-color: green;
-    transform: translateZ(-10rem);
+    position: relative;
+    transition: all 1s;
+
+    &:hover button {
+      display: block;
+    }
+
+    &:hover img {
+      filter: grayscale(100%);
+      opacity: .5;
+    }
   }
 
-  &_box2 {
-    height: 50rem;
-    width: auto;
-    background-color: green;
+  &_box-Z {
     transform: perspective(400px) translateZ(-100px);
   }
+
+  &-visit {
+    display: none;
+    position: absolute;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    color: $color-purple;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, .5);
+    border: 3px solid $color-purple;
+    transition: all 1s;
+    border-radius: 5px;
+    letter-spacing: .2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .7);
+    }
+
+    &:active {
+      background-color: #FFFF;
+    }
+  }
+
 }
 
 
