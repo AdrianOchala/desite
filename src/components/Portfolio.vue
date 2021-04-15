@@ -3,7 +3,7 @@
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
     <Carousel class="portfolio_carousel" :items-to-show="5" :wrap-around="true">
       <Slide v-for="slide in slide" :key="slide">
-        <img :class="slide.class" :src="require(slide.img)">
+        <img :class="slide.class" src="../images/portfolio/termobudowa.png">
       </Slide>
 
       <template #addons>
@@ -42,6 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "src/styles/abstract/variables";
 .portfolio {
   height: 100vh;
   display: flex;
@@ -138,8 +139,8 @@ export default {
 }
 .carousel__prev,
 .carousel__next {
-  display: none;
-  background-color: var(--carousel-color-primary);
+  display: flex;
+  background-color: $color-purple;
   border-radius: var(--carousel-nav-width);
   width: var(--carousel-nav-width);
   height: var(--carousel-nav-width);
