@@ -22,5 +22,8 @@
 		"contact": "Kontakt",
 		"home": "Strona Główna",
 		"portfolio": "Portfolio"
+	},
+	"portfolio": {
+		"title": "Nasze projekty"
 	}
 }

@@ -22,5 +22,8 @@
 		"contact": "Contact",
 		"home": "Home",
 		"portfolio": "Portfolio"
+	},
+	"portfolio": {
+		"title": "Our projects"
 	}
 }

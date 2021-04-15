@@ -2,7 +2,7 @@
   <TheNavigation></TheNavigation>
   <Header id="home"></Header>
   <About id="about"></About>
-  <h1 style="height: 100vh" id="portfolio">eee</h1>
+  <Portfolio id="portfolio"></Portfolio>
   <contact id="contact"></contact>
   <TheFooter></TheFooter>
 
@@ -14,6 +14,7 @@ import Header from "./components/Header";
 import TheFooter from "@/components/layout/TheFooter";
 import Contact from "@/components/Contact";
 import About from "./components/About";
+import Portfolio from "@/components/Portfolio";
 
 export default {
   name: 'App',
@@ -21,6 +22,7 @@ export default {
     scrollTo(0, 0);
   },
   components: {
+    Portfolio,
     Contact,
     About,
     Header,
