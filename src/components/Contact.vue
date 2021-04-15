@@ -1,21 +1,26 @@
 <template>
-  <div class="contact">
-    <div class="contact-container">
-      <h2>{{ $t("contact.contact") }}</h2>
-      <form class="contact-form" @submit.prevent="sendEmail">
-        <input :placeholder="$t('contact.name')" type="text" required name="user_name">
-        <input :placeholder="$t('contact.email')" type="email" required name="user_email">
-        <textarea :placeholder="$t('contact.message')" required name="message"></textarea>
-        <button :disabled="isSend" :class="{ disabled: isSend, active: !isSend}" type="submit">{{ $t('contact.send') }}</button>
-      </form>
-    </div>
+  <div class="full">
+    <div class="contact">
+      <div class="contact-container">
+        <h2>{{ $t("contact.contact") }}</h2>
+        <form class="contact-form" @submit.prevent="sendEmail">
+          <input :placeholder="$t('contact.name')" type="text" required name="user_name">
+          <input :placeholder="$t('contact.email')" type="email" required name="user_email">
+          <textarea :placeholder="$t('contact.message')" required name="message"></textarea>
+          <button :disabled="isSend" :class="{ disabled: isSend, active: !isSend}" type="submit">{{
+              $t('contact.send')
+            }}
+          </button>
+        </form>
+      </div>
 
-    <div class="contact-social">
-      <h2>{{ $t("contact.follow") }}</h2>
-      <p>Lorem ipsum faka maka kup mi składaka</p>
-      <div class="contact-social-icons">
-        <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
-        <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
+      <div class="contact-social">
+        <h2>{{ $t("contact.follow") }}</h2>
+        <p>Lorem ipsum faka maka kup mi składaka</p>
+        <div class="contact-social-icons">
+          <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
+          <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
+        </div>
       </div>
     </div>
   </div>
@@ -29,7 +34,7 @@ export default {
   name: "Contact",
   data() {
     return {
-    isSend: false
+      isSend: false
     }
   },
   methods: {
@@ -50,6 +55,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/abstract/variables";
+
+.full {
+  display: flex;
+  align-items: center;
+  height: 80vh;
+}
+
 .disabled {
   margin-top: auto;
   margin-bottom: 2rem;
