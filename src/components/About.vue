@@ -1,9 +1,12 @@
 <template>
   <div class="content">
     <div class="content__left">
-      <div class="content__image">
-        <img src="../images/about.png" alt="Header Photo">
+      <div class="content__border">
+        <div class="content__image">
+
+        </div>
       </div>
+
     </div>
     <div class="content__right">
       <div class="content__text">
@@ -42,7 +45,6 @@ export default {
   flex-direction: row;
 
   &__right {
-    float: left;
     margin-right: 1rem;
     padding: 1rem 1rem 1rem 5rem;
     height: 100%;
@@ -86,37 +88,36 @@ export default {
     position: relative;
 
   }
-
-  &__image {
+  &__border{
     display: flex;
+    position: relative;
+    height: 60%;
+    width: 90%;
+    align-self: center;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 8%;
+      left: 0;
+      width: 80%;
+      height: 100%;
+      border: .3rem solid white;
+      transform: skewX(-14deg);
 
-    img {
-      height: 60vh;
-      width: 35vw;
-      align-self: center;
-
-      @include respond(big-desktop) {
-        height: 40vh;
-        width: 30vw;
+      @include respond(big-desktop){
+        transform: skewX(-8deg);
       }
     }
   }
 
-  &__image::after {
-    content: "";
-    position: absolute;
-    align-self: center;
-    height: 60vh;
-    width: 28vw;
-    border: .3rem solid white;
-    transform: skewX(-14.5deg) translateY(-3rem);
-    left: 12rem;
-
-    @include respond(big-desktop) {
-      height: 40vh;
-      width: 23vw;
-    }
+  &__image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/about-image.jpg");
+    background-size: cover;
+    background-position: bottom;
+    clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
   }
-
 }
 </style>
