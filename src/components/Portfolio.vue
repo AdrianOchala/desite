@@ -83,12 +83,12 @@ export default {
 
     @media only screen and (max-width: 910px) {
       height: auto;
-      width: 20rem;
+      width: 23rem;
     }
 
     @media only screen and (max-width: 600px) {
       height: auto;
-      width: 13rem;
+      width: 16rem;
     }
 
 
