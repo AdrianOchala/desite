@@ -12,6 +12,9 @@
 		"message": "Your Message",
 		"name": "Your Name (required)",
 		"send": "Send",
+		"social": {
+			"description": "Follow us on social media and stay up with us!"
+		},
 		"success": "Message was sent"
 	},
 	"header": {

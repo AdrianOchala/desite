@@ -12,6 +12,9 @@
 		"message": "Twoja Wiadomość",
 		"name": "Twoje Imię (wymagane)",
 		"send": "Wyślij",
+		"social": {
+			"description": "Obserwuj nas w mediach społecznościowych i bądź z nami na bieżąco!"
+		},
 		"success": "Wiadomość została wysłana"
 	},
 	"header": {

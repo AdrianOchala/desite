@@ -20,7 +20,7 @@
 
       <div class="contact-social">
         <h2>{{ $t("contact.follow") }}</h2>
-        <p>Lorem ipsum faka maka kup mi składaka</p>
+        <p>{{ $t('contact.social.description') }}</p>
         <div class="contact-social-icons">
           <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
           <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
