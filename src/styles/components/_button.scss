@@ -38,8 +38,13 @@ $gradient: #6619b3;
   }
 
   @include respond(medium){
-    margin: 1.5rem .5rem;
+    margin: 1.5rem 1rem;
     font-size: 1.6rem;
+  }
+
+  @include respond(largeMobile){
+    margin: 1rem 1.5rem;
+    font-size: 1.2rem;
   }
 
   &:hover{

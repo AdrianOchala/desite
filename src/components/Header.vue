@@ -44,6 +44,10 @@ export default {
   display: flex;
   flex-direction: row;
 
+  @include respond(largeMobile){
+    margin-top: 0rem;
+  }
+
   &__left {
     height: 100%;
     width: 55%;
@@ -61,6 +65,10 @@ export default {
       @include respond(medium){
         font-size: 2.8rem;
       }
+
+      @include respond(largeMobile){
+        font-size: 2rem;
+      }
     }
 
     p {
@@ -73,6 +81,10 @@ export default {
 
       @include respond(medium){
         font-size: 1.8rem;
+      }
+
+      @include respond(largeMobile){
+        font-size: 1.5rem;
       }
     }
 
@@ -89,7 +101,7 @@ export default {
     margin-left: 1rem;
     padding: 1rem;
     height: 100%;
-    flex: 1;
+    flex-grow: 1;
     display: flex;
     position: relative;
   }
@@ -117,6 +129,11 @@ export default {
         height: 70%;
         top: 20%;
       }
+
+      @include respond(largeMobile){
+        height: 40%;
+        top: 35%;
+      }
     }
   }
   &__image {
@@ -132,6 +149,11 @@ export default {
     @include respond(medium){
       height: 65%;
     }
+
+    @include respond(largeMobile){
+      height: 40%;
+    }
+
   }
 }
 </style>

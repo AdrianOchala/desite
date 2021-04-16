@@ -114,7 +114,7 @@ export default {
   z-index: 9999;
 
   @include respond(mobile) {
-    width: 100vw;
+    width: 97vw;
   }
 
   &::after {
@@ -141,8 +141,7 @@ export default {
   z-index: 9999;
 
   @include respond(mobile) {
-    width: 100vw;
-    padding: 2rem 0;
+    width: 97vw;
   }
 
   &::after {
@@ -166,7 +165,7 @@ nav {
   justify-content: flex-end;
 
   @include respond(mobile) {
-    grid-gap: 1.5rem;
+    grid-gap: 1.3rem;
   }
 
   .links {

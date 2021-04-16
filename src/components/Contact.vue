@@ -99,8 +99,8 @@ export default {
   align-items: center;
   height: 90vh;
 
-  @include respond(mobile) {
-    height: 100vh;
+  @include respond(largeMobile) {
+    height: 90vh;
   }
 }
 
@@ -123,14 +123,10 @@ export default {
     margin-top: 1.5rem;
     margin-bottom: .5rem;
   }
-}
 
-.input-button {
-  color: white;
-  font-size: 2rem;
-  font-weight: 300;
-  text-decoration: none;
-  background-color: transparent;
+  @include respond(largeMobile) {
+    font-size: 1rem;
+  }
 }
 
 .contact {
@@ -155,6 +151,10 @@ export default {
       font-size: 4rem;
       margin: 1rem 0;
       align-self: center;
+    }
+
+    @include respond(largeMobile) {
+      font-size: 2.5rem;
     }
   }
 
@@ -205,6 +205,10 @@ export default {
         text-align: center;
       }
 
+      @include respond(largeMobile) {
+        font-size: 1.2rem;
+      }
+
       &:focus {
         border: 1px solid $color-purple;
       }
@@ -222,6 +226,10 @@ export default {
         width: 100%;
         align-self: center;
         text-align: center;
+      }
+
+      @include respond(largeMobile) {
+        font-size: 1.2rem;
       }
 
       &:focus {
@@ -250,6 +258,10 @@ export default {
         margin-bottom: .5rem;
       }
 
+      @include respond(largeMobile) {
+        font-size: 1rem;
+      }
+
       &:hover {
         border: 3px solid $color-purple;
         color: darken($color-purple, 10);
@@ -272,6 +284,10 @@ export default {
       @include respond(medium) {
         font-size: 3rem;
         margin: 1rem 0;
+      }
+
+      @include respond(largeMobile) {
+        font-size: 2.5rem;
       }
     }
 
@@ -298,6 +314,10 @@ export default {
         margin-bottom: 1rem;
       }
 
+      @include respond(largeMobile) {
+        font-size: 4.5rem;
+      }
+
       .icon {
         cursor: pointer;
         transition: all .5s;
@@ -317,7 +337,7 @@ export default {
     justify-content: space-evenly;
     border: 1px solid #FFFFFF;
 
-    @include respond(mobile) {
+    @include respond(largeMobile) {
       flex-direction: column;
       align-items: center;
       padding: 1rem;
@@ -325,6 +345,10 @@ export default {
 
     h3 {
       font-size: 2.5rem;
+
+      @include respond(largeMobile) {
+        font-size: 2rem;
+      }
     }
 
     &-person {
@@ -333,7 +357,7 @@ export default {
       padding: 1rem;
       width: 40rem;
 
-      @include respond(mobile) {
+      @include respond(largeMobile) {
         padding: .5rem;
         width: 30rem;
       }
@@ -342,6 +366,10 @@ export default {
       &-icon {
         font-size: 2rem;
         opacity: .5;
+
+        @include respond(largeMobile) {
+          font-size: 1.5rem;
+        }
       }
 
       &-detail {
@@ -349,6 +377,10 @@ export default {
         font-size: 1.5rem;
         align-items: center;
         justify-content: center;
+
+        @include respond(largeMobile) {
+          font-size: 1.2rem;
+        }
 
         p {
           font-family: Mulish, sans-serif;
