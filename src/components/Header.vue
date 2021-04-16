@@ -44,6 +44,7 @@ export default {
   display: flex;
   flex-direction: row;
 
+
   &__left {
     height: 100%;
     width: 55%;
