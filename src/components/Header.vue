@@ -111,6 +111,10 @@ export default {
     height: 60%;
     width: 90%;
     align-self: center;
+    @include respond(mobile){
+      //height: 30%;
+    }
+
     &::after{
       content: "";
       position: absolute;
@@ -121,18 +125,34 @@ export default {
       border: .3rem solid white;
       transform: skewX(14deg);
 
+      @media screen and (max-width:1400px){
+        transform: skewX(13deg);
+      }
+
+      @media screen and (max-width:1400px) and (max-height: 600px){
+        transform: skewX(17deg);
+      }
+      @media screen and (max-width:1400px) and (max-height: 500px){
+        transform: skewX(18deg);
+      }
+
       @include respond(big-desktop){
-        transform: skewX(11deg);
+        transform: skewX(15deg);
       }
 
       @include respond(medium){
-        height: 70%;
-        top: 20%;
+        transform: skewX(10deg);
+      }
+      @media screen and (max-width:1000px){
+        transform: skewX(9deg);
       }
 
       @include respond(largeMobile){
-        height: 40%;
-        top: 35%;
+        //height: 40%;
+        //top: 35%;
+      }
+      @include respond(mobile){
+        //transform: skewX(8deg);
       }
     }
   }
@@ -145,15 +165,6 @@ export default {
     background-size: cover;
     background-position: bottom;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
-
-    @include respond(medium){
-      height: 65%;
-    }
-
-    @include respond(largeMobile){
-      height: 40%;
-    }
-
   }
 }
 </style>
