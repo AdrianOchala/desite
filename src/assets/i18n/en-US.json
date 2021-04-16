@@ -1,6 +1,8 @@
 {
 	"about": {
-		"contact": "Contact"
+		"contact": "Contact",
+		"description": "Young, creative, with an open mind, this is how we define our team. There are two of us, and as the saying goes, two heads are better than one. Our mission, and what is more, our passion is creating websites, so we approach each project with full commitment and passion. Together with you, we can make your dreams come true and fulfill our mission.",
+		"title": "About us"
 	},
 	"contact": {
 		"contact": "Contact",
@@ -14,6 +16,7 @@
 	},
 	"header": {
 		"about": "About us",
+		"description": "Your vision is the most important for us, we will design a website especially for you!",
 		"projects": "View projects",
 		"title": "We create amazing websites"
 	},

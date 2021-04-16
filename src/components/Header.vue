@@ -6,7 +6,7 @@
           {{ $t("header.title") }}
         </h1>
         <p class="content__text-description">
-          Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą, Lorem ipsum mada łaka raka fą.
+          {{ $t('header.description') }}
         </p>
         <Button :text=" $t('header.about') " href="#about"></Button>
         <Button :text=" $t('header.projects') " href="#portfolio"></Button>
@@ -17,8 +17,6 @@
       <div class="content__image">
         <img src="../images/header.png" alt="Header Photo">
       </div>
-
-
     </div>
   </div>
 </template>

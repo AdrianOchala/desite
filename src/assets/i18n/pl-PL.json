@@ -1,6 +1,8 @@
 {
 	"about": {
-		"contact": "Kontakt"
+		"contact": "Kontakt",
+		"description": "Młodzi, kreatywni, z otwartym umysłem, tak określamy nasz zespół. Jest nas dwóch, a jak to się mówi, co dwie głowy to nie jedna. Naszą misją, a co więcej pasją jest tworzenie stron internetowych, więc do każdego projektu podchodzimy z pełnym zaangażowaniem i zamiłowaniem. Razem z Tobą możemy spełnić Twoje marzenia i realizować swoją misję.",
+		"title": "O nas"
 	},
 	"contact": {
 		"contact": "Kontakt",
@@ -14,6 +16,7 @@
 	},
 	"header": {
 		"about": "O nas",
+		"description": "Dla nas najważniejsza jest Twoja wizja, zaprojektujemy stronę specjalnie dla Ciebie!",
 		"projects": "Nasze projekty",
 		"title": "Tworzymy wyjątkowe strony internetowe"
 	},

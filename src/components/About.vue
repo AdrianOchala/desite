@@ -3,25 +3,26 @@
     <div class="content__left">
       <div class="content__image">
         <img src="../images/about.png" alt="Header Photo">
-    </div>
-    </div>
-      <div class="content__right">
-        <div class="content__text">
-          <h1 class="content__text-title">
-            About us
-          </h1>
-          <p class="content__text-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-          <Button :text=" $t('about.contact') " href="#contact"></Button>
-        </div>
       </div>
+    </div>
+    <div class="content__right">
+      <div class="content__text">
+        <h1 class="content__text-title">
+          {{ $t('about.title') }}
+        </h1>
+        <p class="content__text-description">
+          {{ $t('about.description') }}
+        </p>
+        <Button :text=" $t('about.contact') " href="#contact"></Button>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 
 import Button from "./Button";
+
 export default {
   name: "About",
   components: {Button},
@@ -31,7 +32,8 @@ export default {
 <style lang="scss" scoped>
 @import "src/styles/abstract/mixins";
 @import "src/styles/components/button";
-.content{
+
+.content {
   margin: 0 auto;
   margin-top: 5rem;
   width: 90vw;
@@ -39,7 +41,7 @@ export default {
   display: flex;
   flex-direction: row;
 
-  &__right{
+  &__right {
     float: left;
     margin-right: 1rem;
     padding: 1rem 1rem 1rem 5rem;
@@ -48,7 +50,7 @@ export default {
     display: flex;
     align-items: center;
 
-    h1{
+    h1 {
       font-weight: 600;
       font-size: 5rem;
 
@@ -57,7 +59,7 @@ export default {
       }
     }
 
-    p{
+    p {
       font-weight: 200;
       font-size: 2.5rem;
 
@@ -67,14 +69,15 @@ export default {
     }
 
   }
-  &__text{
+
+  &__text {
     &-title,
-    &-description{
+    &-description {
       position: relative;
     }
   }
 
-  &__left{
+  &__left {
     margin-left: 1rem;
     padding: 1rem;
     height: 100%;
@@ -84,10 +87,10 @@ export default {
 
   }
 
-  &__image{
+  &__image {
     display: flex;
 
-    img{
+    img {
       height: 60vh;
       width: 35vw;
       align-self: center;
@@ -98,7 +101,8 @@ export default {
       }
     }
   }
-  &__image::after{
+
+  &__image::after {
     content: "";
     position: absolute;
     align-self: center;
