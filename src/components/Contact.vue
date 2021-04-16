@@ -1,11 +1,15 @@
 <template>
   <div class="full">
     <div class="contact">
+
       <div class="contact-container">
         <h2>{{ $t("contact.contact") }}</h2>
+
         <form class="contact-form" @submit.prevent="sendEmail">
-          <input :placeholder="$t('contact.name')" type="text" required name="user_name">
-          <input :placeholder="$t('contact.email')" type="email" required name="user_email">
+          <div class="contact-form-personal">
+            <input :placeholder="$t('contact.name')" type="text" required name="user_name">
+            <input :placeholder="$t('contact.email')" type="email" required name="user_email">
+          </div>
           <textarea :placeholder="$t('contact.message')" required name="message"></textarea>
           <button :disabled="isSend" :class="{ disabled: isSend, active: !isSend}" type="submit">{{
               $t('contact.send')
@@ -20,6 +24,36 @@
         <div class="contact-social-icons">
           <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
           <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact_us">
+      <div class="contact_us-person">
+        <h3>Szymon Wójcik</h3>
+
+        <div class="contact_us-person-detail">
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
+          <p>+(48) 794 700 712</p>
+        </div>
+
+        <div class="contact_us-person-detail">
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
+          <p>wojcik.szymon1@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="contact_us-person">
+        <h3>Adrian Ochała</h3>
+
+        <div class="contact_us-person-detail">
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
+          <p>+(48) 512 390 104</p>
+        </div>
+
+        <div class="contact_us-person-detail">
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
+          <p>ochala.adrian@gmail.com</p>
         </div>
       </div>
     </div>
@@ -55,15 +89,19 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/abstract/variables";
+@import "../styles/abstract/mixins";
 
 .full {
   display: flex;
+  margin-top: 10rem;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 90vh;
 }
 
 .disabled {
-  margin-top: auto;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   padding: 2rem;
   margin-left: 50%;
@@ -89,21 +127,38 @@ export default {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  height: 70vh;
   width: 90vw;
   border: 1px solid #FFFFFF;
+  margin-top: 5rem;
+
+  @include respond(medium) {
+    flex-direction: column;
+  }
 
   h2 {
     font-weight: 600;
     font-size: 5rem;
     text-align: center;
     margin: 4rem 0;
+
+    @include respond(medium) {
+      font-size: 4rem;
+      margin: 1rem 0;
+      align-self: center;
+    }
   }
 
   &-container {
     display: flex;
     flex-direction: column;
     width: 65%;
+
+    @include respond(medium) {
+      width: 100%;
+      margin-top: 1rem;
+      flex-direction: column;
+      border-bottom: 1px solid #FFFF;
+    }
   }
 
   &-form {
@@ -113,12 +168,32 @@ export default {
     flex: 1;
     flex-direction: column;
 
+    @include respond(medium) {
+      width: 80%;
+      margin-bottom: 1.5rem;
+    }
+
+    &-personal {
+      display: flex;
+      flex-direction: column;
+
+      @include respond(medium) {
+        align-self: center;
+        width: 100%;
+      }
+    }
+
     input {
       margin-bottom: 4rem;
       padding: 1rem;
       background-color: transparent;
       border: none;
       border-bottom: 1px solid $color-grey;
+
+      @include respond(medium) {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
 
       &:focus {
         border: 1px solid $color-purple;
@@ -133,13 +208,19 @@ export default {
       border: none;
       border-bottom: 1px solid $color-grey;
 
+      @include respond(medium) {
+        width: 100%;
+        align-self: center;
+        text-align: center;
+      }
+
       &:focus {
         border: 1px solid $color-purple;
       }
     }
 
     .active {
-      margin-top: auto;
+      margin-top: 5rem;
       margin-bottom: 2rem;
       padding: 2rem;
       margin-left: 50%;
@@ -152,6 +233,12 @@ export default {
       letter-spacing: .2rem;
       font-size: 1.5rem;
       cursor: pointer;
+
+      @include respond(medium) {
+        padding: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: .5rem;
+      }
 
       &:hover {
         border: 3px solid $color-purple;
@@ -171,6 +258,11 @@ export default {
       font-size: 5rem;
       text-align: center;
       margin: 4rem 0;
+
+      @include respond(medium) {
+        font-size: 3rem;
+        margin: 1rem 0;
+      }
     }
 
     p {
@@ -178,6 +270,10 @@ export default {
       font-size: 2rem;
       margin: 0 auto;
       width: 70%;
+
+      @include respond(medium) {
+        display: none;
+      }
     }
 
     &-icons {
@@ -187,6 +283,10 @@ export default {
       align-items: flex-end;
       margin-bottom: 5rem;
       justify-content: space-evenly;
+
+      @include respond(medium) {
+        margin-bottom: 1rem;
+      }
 
       .icon {
         cursor: pointer;
@@ -198,6 +298,44 @@ export default {
         }
       }
     }
+  }
+
+  &_us {
+    display: flex;
+    width: 90vw;
+    padding: 2rem;
+    justify-content: space-evenly;
+    border: 1px solid #FFFFFF;
+
+    h3 {
+      font-size: 2.5rem;
+    }
+
+    &-person {
+      text-align: center;
+      border: 1px solid #FFFFFF;
+      padding: 1rem;
+      width: 40rem;
+
+      &-icon {
+        font-size: 2rem;
+        opacity: .5;
+      }
+
+      &-detail {
+        display: flex;
+        font-size: 1.5rem;
+        align-items: center;
+        justify-content: center;
+
+        p {
+          font-family: Mulish, sans-serif;
+          margin-left: .5rem;
+          font-weight: 200;
+        }
+      }
+    }
+
   }
 
 }
