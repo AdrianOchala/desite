@@ -114,7 +114,7 @@ export default {
   z-index: 9999;
 
   @include respond(mobile) {
-    width: 97vw;
+    width: 95vw;
   }
 
   &::after {
@@ -141,7 +141,7 @@ export default {
   z-index: 9999;
 
   @include respond(mobile) {
-    width: 97vw;
+    width: 95vw;
   }
 
   &::after {
