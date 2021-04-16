@@ -59,6 +59,10 @@ export default {
       @include respond(big-desktop) {
         font-size: 4rem;
       }
+
+      @include respond(medium){
+        font-size: 2.8rem;
+      }
     }
 
     p {
@@ -67,6 +71,10 @@ export default {
 
       @include respond(big-desktop) {
         font-size: 2rem;
+      }
+
+      @include respond(medium){
+        font-size: 1.8rem;
       }
     }
 
@@ -107,17 +115,27 @@ export default {
       @include respond(big-desktop){
         transform: skewX(-8deg);
       }
+
+      @include respond(medium){
+        height: 70%;
+        top: 20%;
+      }
     }
   }
 
   &__image {
     display: flex;
+    align-self: center;
     height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/about-image.jpg");
     background-size: cover;
     background-position: bottom;
     clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
+
+    @include respond(medium){
+      height: 65%;
+    }
   }
 }
 </style>

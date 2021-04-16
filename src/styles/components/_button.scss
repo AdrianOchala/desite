@@ -37,6 +37,11 @@ $gradient: #6619b3;
     margin: 3rem 1rem;
   }
 
+  @include respond(medium){
+    margin: 1.5rem .5rem;
+    font-size: 1.6rem;
+  }
+
   &:hover{
       background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
       -webkit-background-clip: text;

@@ -44,7 +44,6 @@ export default {
   display: flex;
   flex-direction: row;
 
-
   &__left {
     height: 100%;
     width: 55%;
@@ -58,14 +57,22 @@ export default {
       @include respond(big-desktop) {
         font-size: 4rem;
       }
+
+      @include respond(medium){
+        font-size: 2.8rem;
+      }
     }
 
     p {
       font-weight: 200;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
 
       @include respond(big-desktop) {
         font-size: 2rem;
+      }
+
+      @include respond(medium){
+        font-size: 1.8rem;
       }
     }
 
@@ -103,12 +110,18 @@ export default {
       transform: skewX(14deg);
 
       @include respond(big-desktop){
-        transform: skewX(8deg);
+        transform: skewX(11deg);
+      }
+
+      @include respond(medium){
+        height: 70%;
+        top: 20%;
       }
     }
   }
   &__image {
     display: flex;
+    align-self: center;
     height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/header-image3.jpg");
@@ -116,6 +129,9 @@ export default {
     background-position: bottom;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
 
+    @include respond(medium){
+      height: 65%;
+    }
   }
 }
 </style>
