@@ -113,6 +113,12 @@ export default {
   border-radius: 5px;
   letter-spacing: .2rem;
   font-size: 1.5rem;
+
+  @include respond(medium) {
+    padding: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+  }
 }
 
 .input-button {
