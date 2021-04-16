@@ -77,6 +77,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/abstract/variables";
+@import "src/styles/abstract/mixins";
 
 .logo {
   font-family: Montserrat, sans-serif;
@@ -112,6 +113,10 @@ export default {
   transition: all 1s ease-in;
   z-index: 9999;
 
+  @include respond(mobile) {
+    width: 100vw;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -135,6 +140,11 @@ export default {
   transition: all 1s ease-in;
   z-index: 9999;
 
+  @include respond(mobile) {
+    width: 100vw;
+    padding: 2rem 0;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -154,6 +164,10 @@ nav {
   grid-gap: 3rem;
   flex: 1;
   justify-content: flex-end;
+
+  @include respond(mobile) {
+    grid-gap: 1.5rem;
+  }
 
   .links {
     text-decoration: none;

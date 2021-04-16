@@ -47,12 +47,12 @@
         <h3>Adrian Ochała</h3>
 
         <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
           <p>+(48) 512 390 104</p>
         </div>
 
         <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
+          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
           <p>ochala.adrian@gmail.com</p>
         </div>
       </div>
@@ -98,6 +98,10 @@ export default {
   justify-content: center;
   align-items: center;
   height: 90vh;
+
+  @include respond(mobile) {
+    height: 100vh;
+  }
 }
 
 .disabled {
@@ -313,6 +317,12 @@ export default {
     justify-content: space-evenly;
     border: 1px solid #FFFFFF;
 
+    @include respond(mobile) {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+
     h3 {
       font-size: 2.5rem;
     }
@@ -322,6 +332,12 @@ export default {
       border: 1px solid #FFFFFF;
       padding: 1rem;
       width: 40rem;
+
+      @include respond(mobile) {
+        padding: .5rem;
+        width: 30rem;
+      }
+
 
       &-icon {
         font-size: 2rem;
