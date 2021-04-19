@@ -12,7 +12,24 @@
         <option value="en">EN</option>
       </select>
     </nav>
+
+    <div class="hamburger-mobile">
+      <font-awesome-icon @click="toggleHamburger()" class="hamburger-mobile-icon" icon="bars" :style="{ color: 'green' }"></font-awesome-icon>
+    </div>
+
   </div>
+
+  <transition name="fade">
+    <div v-if="mobileActive" class="mobile_menu">
+      <div class="mobile_menu_nav">
+        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#home">{{ $t("navigation.home") }}</a>
+        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#about">{{ $t("navigation.about") }}</a>
+        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
+        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#contact">{{ $t("navigation.contact") }}</a>
+      </div>
+    </div>
+  </transition>
+
 </template>
 
 <script>
@@ -22,7 +39,8 @@ export default {
     return {
       scrolled: false,
       list: null,
-      selected: "pl"
+      selected: "pl",
+      mobileActive: false
     }
   },
   watch: {
@@ -32,6 +50,9 @@ export default {
     }
   },
   methods: {
+    async toggleHamburger() {
+      this.mobileActive = !this.mobileActive;
+    },
     addActive() {
       const nav = document.getElementById('nav');
       if (window.scrollY >= 100) {
@@ -113,10 +134,6 @@ export default {
   transition: all 1s ease-in;
   z-index: 9999;
 
-  @include respond(mobile) {
-    width: 95vw;
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -140,10 +157,6 @@ export default {
   transition: all 1s ease-in;
   z-index: 9999;
 
-  @include respond(mobile) {
-    width: 95vw;
-  }
-
   &::after {
     content: "";
     position: absolute;
@@ -165,10 +178,12 @@ nav {
   justify-content: flex-end;
 
   @include respond(mobile) {
-    grid-gap: 1.3rem;
+    display: none;
   }
 
   .links {
+    font-family: Mulish, sans-serif;
+    font-weight: 300;
     text-decoration: none;
     transition: all .5s ease-out;
 
@@ -198,5 +213,93 @@ option {
   border: 2px solid $color-purple;
   background-color: black;
   margin: 0 auto;
+}
+
+// mobile hamburger menu
+.hamburger-mobile {
+  font-size: 2rem;
+  display: grid;
+  grid-auto-flow: column;
+  flex: 1;
+  justify-content: flex-end;
+
+  @media only screen and (min-width: 600px) {
+    display: none;
+  };
+
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-icon {
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+
+.mobile_menu {
+  display: block;
+  position: fixed;
+  z-index: 100000;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-background;
+
+  &_nav {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &-link {
+      font-family: Varela Round, sans-serif;
+      font-weight: 300;
+      text-decoration: none;
+      font-size: 3rem;
+      color: rgba(255,255,255, .7);
+      position: relative;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all .2s;
+
+      &:active {
+        color: $color-purple;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        transform: translateY(1rem);
+        height: 1px;
+        width: 100%;
+        bottom: 0rem;
+        background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
+      }
+
+      &:active:after {
+        display: block;
+      }
+    }
+  }
+}
+
+// animations
+.fade-enter-to, .fade-leave-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .5s ease-in;
+}
+.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(400px);
 }
 </style>
