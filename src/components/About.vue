@@ -44,6 +44,10 @@ export default {
   display: flex;
   flex-direction: row;
 
+  @include respond(largeMobile) {
+    flex-direction: column;
+  }
+
   &__right {
     margin-right: 1rem;
     padding: 1rem 1rem 1rem 5rem;
@@ -51,6 +55,11 @@ export default {
     width: 55%;
     display: flex;
     align-items: center;
+
+    @include respond(largeMobile) {
+      width: 100%;
+      align-items: flex-start;
+    }
 
     h1 {
       font-weight: 600;
@@ -60,8 +69,12 @@ export default {
         font-size: 4rem;
       }
 
-      @include respond(medium){
+      @include respond(medium) {
         font-size: 2.8rem;
+      }
+
+      @include respond(largeMobile) {
+        font-size: 2.4rem;
       }
     }
 
@@ -73,8 +86,13 @@ export default {
         font-size: 2rem;
       }
 
-      @include respond(medium){
+      @include respond(medium) {
         font-size: 1.8rem;
+      }
+
+      @include respond(largeMobile) {
+        font-size: 1.5rem;
+        width: 90%;
       }
     }
 
@@ -93,16 +111,24 @@ export default {
     height: 100%;
     flex: 1;
     display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
 
+    @include respond(largeMobile) {
+      flex: 0 1 auto;
+      justify-content: flex-end;
+    }
   }
-  &__border{
+
+  &__border {
     display: flex;
     position: relative;
     height: 60%;
     width: 90%;
     align-self: center;
-    &::after{
+
+    &::after {
       content: "";
       position: absolute;
       top: 8%;
@@ -112,13 +138,20 @@ export default {
       border: .3rem solid white;
       transform: skewX(-14deg);
 
-      @include respond(big-desktop){
+      @include respond(big-desktop) {
         transform: skewX(-8deg);
       }
 
-      @include respond(medium){
+      @include respond(medium) {
         height: 70%;
         top: 20%;
+      }
+
+      @include respond(largeMobile) {
+        width: 90%;
+        height: 70%;
+        top: 20%;
+        transform: skewX(-12deg);
       }
     }
   }
@@ -130,10 +163,15 @@ export default {
     width: 100%;
     background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/about-image.jpg");
     background-size: cover;
-    background-position: bottom;
+    background-position: 50% 40%;
     clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
 
-    @include respond(medium){
+    @include respond(largeMobile) {
+      background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/about-mobile-image.jpg");
+      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    }
+
+    @include respond(medium) {
       height: 65%;
     }
   }
