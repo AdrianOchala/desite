@@ -8,6 +8,10 @@ $gradient: #6619b3;
   width: 2.5rem;
   margin-left: .5rem;
 
+  @include respond(largeMobile){
+    width: 1.5rem;
+    margin-left: .2rem;
+  }
 }
 .arrow2{
   border: solid white;
@@ -43,8 +47,9 @@ $gradient: #6619b3;
   }
 
   @include respond(largeMobile){
-    margin: 1rem 1.5rem;
+    margin: 1rem 1rem;
     font-size: 1.2rem;
+    padding: 1rem 2.5rem;
   }
 
   &:hover{

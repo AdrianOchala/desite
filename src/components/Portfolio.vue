@@ -59,6 +59,14 @@ export default {
   justify-content: center;
   align-items: center;
 
+  @media only screen and (max-width: 910px) {
+    height: 80vh;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 80vh;
+  }
+
   &-title {
     margin-bottom: 10rem;
     font-weight: 600;

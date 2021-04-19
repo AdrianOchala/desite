@@ -125,46 +125,63 @@ export default {
       border: .3rem solid white;
       transform: skewX(14deg);
 
-      @media screen and (max-width:1400px){
-        transform: skewX(13deg);
-      }
-
-      @media screen and (max-width:1400px) and (max-height: 600px){
-        transform: skewX(17deg);
-      }
-      @media screen and (max-width:1400px) and (max-height: 500px){
-        transform: skewX(18deg);
-      }
-
-      @include respond(big-desktop){
-        transform: skewX(15deg);
-      }
-
-      @include respond(medium){
-        transform: skewX(10deg);
-      }
-      @media screen and (max-width:1000px){
-        transform: skewX(9deg);
-      }
-
       @include respond(largeMobile){
-        //height: 40%;
-        //top: 35%;
+        height: 60%;
+        transform: skewX(10deg);
+        top: 25%;
+        left: 25%;
       }
-      @include respond(mobile){
-        //transform: skewX(8deg);
-      }
+
+      //@media screen and (max-width:1400px){
+      //  transform: skewX(13deg);
+      //}
+      //
+      //@media screen and (max-width:1400px) and (max-height: 600px){
+      //  transform: skewX(17deg);
+      //}
+      //@media screen and (max-width:1400px) and (max-height: 500px){
+      //  transform: skewX(18deg);
+      //}
+
+      //@include respond(big-desktop){
+      //  transform: skewX(15deg);
+      //}
+
+      //@include respond(medium){
+      //  transform: skewX(10deg);
+      //}
+      //@media screen and (max-width:1000px){
+      //  transform: skewX(9deg);
+      //}
+
+      //@include respond(largeMobile){
+      //  //height: 40%;
+      //  //top: 35%;
+      //}
+      //@include respond(mobile){
+      //  //transform: skewX(8deg);
+      //}
     }
   }
   &__image {
     display: flex;
     align-self: center;
+    //height: #{"min(500px, 100%)"};
     height: 100%;
+    //height: #{"clamp(50px, 100%, 500px)"};
     width: 100%;
     background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/header-image3.jpg");
     background-size: cover;
     background-position: bottom;
     clip-path: polygon(0 0, 80% 0, 100% 100%, 20% 100%);
+
+    @include respond(big-desktop){
+      transform: skewX(5deg);
+    }
+
+    @include respond(largeMobile){
+      height: 60%;
+    }
   }
 }
 </style>
