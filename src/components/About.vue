@@ -46,6 +46,8 @@ export default {
 
   @include respond(largeMobile) {
     flex-direction: column;
+    height: 90vh;
+    margin-top: 0rem;
   }
 
   &__right {
@@ -118,6 +120,7 @@ export default {
     @include respond(largeMobile) {
       flex: 0 1 auto;
       justify-content: flex-end;
+      height: 100%;
     }
   }
 

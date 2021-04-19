@@ -28,35 +28,35 @@
       </div>
     </div>
 
-    <div class="contact_us">
-      <div class="contact_us-person">
-        <h3>Szymon Wójcik</h3>
+<!--    <div class="contact_us">-->
+<!--      <div class="contact_us-person">-->
+<!--        <h3>Szymon Wójcik</h3>-->
 
-        <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
-          <p>+(48) 794 700 712</p>
-        </div>
+<!--        <div class="contact_us-person-detail">-->
+<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>-->
+<!--          <p>+(48) 794 700 712</p>-->
+<!--        </div>-->
 
-        <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
-          <p>wojcik.szymon1@gmail.com</p>
-        </div>
-      </div>
+<!--        <div class="contact_us-person-detail">-->
+<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>-->
+<!--          <p>wojcik.szymon1@gmail.com</p>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="contact_us-person">
-        <h3>Adrian Ochała</h3>
+<!--      <div class="contact_us-person">-->
+<!--        <h3>Adrian Ochała</h3>-->
 
-        <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>
-          <p>+(48) 512 390 104</p>
-        </div>
+<!--        <div class="contact_us-person-detail">-->
+<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>-->
+<!--          <p>+(48) 512 390 104</p>-->
+<!--        </div>-->
 
-        <div class="contact_us-person-detail">
-          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>
-          <p>ochala.adrian@gmail.com</p>
-        </div>
-      </div>
-    </div>
+<!--        <div class="contact_us-person-detail">-->
+<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>-->
+<!--          <p>ochala.adrian@gmail.com</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 
 </template>
