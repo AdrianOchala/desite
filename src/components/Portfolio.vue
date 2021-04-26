@@ -41,17 +41,18 @@ export default {
 <style lang="scss">
 @import "src/styles/components/button";
 .portfolio {
-  height: 150vh;
+  //height: 150vh;
+  padding-top: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include respond(largeMobile){
-    height: 210vh;
-  }
-  @include respond(mobile){
-    height: 275vh;
-  }
+  //@include respond(largeMobile){
+  //  height: 210vh;
+  //}
+  //@include respond(mobile){
+  //  height: 275vh;
+  //}
 
   &-title {
     margin-bottom: 10rem;
