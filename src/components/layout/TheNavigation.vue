@@ -14,7 +14,7 @@
     </nav>
 
     <div class="hamburger-mobile">
-      <font-awesome-icon @click="toggleHamburger()" class="hamburger-mobile-icon" icon="bars" :style="{ color: 'green' }"></font-awesome-icon>
+      <font-awesome-icon @click="toggleHamburger" class="hamburger-mobile-icon" icon="bars" :style="{ color: 'green' }"></font-awesome-icon>
     </div>
 
   </div>
@@ -22,10 +22,10 @@
   <transition name="fade">
     <div v-if="mobileActive" class="mobile_menu">
       <div class="mobile_menu_nav">
-        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#home">{{ $t("navigation.home") }}</a>
-        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#about">{{ $t("navigation.about") }}</a>
-        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
-        <a @click="toggleHamburger" class="mobile_menu_nav-link" href="#contact">{{ $t("navigation.contact") }}</a>
+        <a @click="toggleHamburger('home')" class="mobile_menu_nav-link">{{ $t("navigation.home") }}</a>
+        <a @click="toggleHamburger('about')" class="mobile_menu_nav-link">{{ $t("navigation.about") }}</a>
+        <a @click="toggleHamburger('portfolio')" class="mobile_menu_nav-link">{{ $t("navigation.portfolio") }}</a>
+        <a @click="toggleHamburger('contact')" class="mobile_menu_nav-link">{{ $t("navigation.contact") }}</a>
       </div>
     </div>
   </transition>
@@ -50,8 +50,13 @@ export default {
     }
   },
   methods: {
-    async toggleHamburger() {
+    async toggleHamburger(id) {
       this.mobileActive = !this.mobileActive;
+      if (id) {
+        document.getElementById(id).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     },
     addActive() {
       const nav = document.getElementById('nav');
@@ -124,6 +129,7 @@ export default {
   transform: translateX(-50%);
   transition: all 1s ease-in;
   z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
 
   &::after {
     content: "";
@@ -241,6 +247,10 @@ option {
   height: 100vh;
   background-color: $color-background;
 
+  @media only screen and (min-width: 600px) {
+    display: none;
+  };
+
   &_nav {
     display: flex;
     height: 100%;
@@ -255,6 +265,7 @@ option {
       font-size: 3rem;
       color: rgba(255,255,255, .7);
       position: relative;
+      cursor: pointer;
 
       display: flex;
       justify-content: center;

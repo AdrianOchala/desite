@@ -140,18 +140,13 @@ export default {
 
   h2 {
     font-weight: 600;
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 6vh, 12rem);
     text-align: center;
     margin: 4rem 0;
 
     @include respond(medium) {
-      font-size: 4rem;
       margin: 1rem 0;
       align-self: center;
-    }
-
-    @include respond(largeMobile) {
-      font-size: 2.5rem;
     }
   }
 
@@ -193,17 +188,14 @@ export default {
     input {
       margin-bottom: 4rem;
       padding: 1rem;
+      font-size: 2vh;
       background-color: transparent;
       border: none;
       border-bottom: 1px solid $color-grey;
 
       @include respond(medium) {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         text-align: center;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 1.2rem;
       }
 
       &:focus {
@@ -213,8 +205,9 @@ export default {
 
     textarea {
       padding: 1rem;
-      height: 5rem;
+      height: 5vh;
       background-color: transparent;
+      font-size: 2vh;
       resize: none;
       border: none;
       border-bottom: 1px solid $color-grey;
@@ -223,10 +216,6 @@ export default {
         width: 100%;
         align-self: center;
         text-align: center;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 1.2rem;
       }
 
       &:focus {
@@ -246,17 +235,13 @@ export default {
       transition: all 1s;
       border-radius: 5px;
       letter-spacing: .2rem;
-      font-size: 1.5rem;
+      font-size: 2vh;
       cursor: pointer;
 
       @include respond(medium) {
         padding: 1rem;
         margin-top: 1.5rem;
         margin-bottom: .5rem;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 1rem;
       }
 
       &:hover {

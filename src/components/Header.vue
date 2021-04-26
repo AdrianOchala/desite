@@ -8,8 +8,11 @@
         <p class="content__text-description">
           {{ $t('header.description') }}
         </p>
-        <Button :text=" $t('header.about') " href="#about"></Button>
-        <Button :text=" $t('header.projects') " href="#portfolio"></Button>
+
+        <div class="buttons">
+          <Button style="margin-right: 2rem;" :text="$t('header.about')" href="#about"></Button>
+          <Button :text="$t('header.projects')" href="#portfolio"></Button>
+        </div>
 
       </div>
     </div>
@@ -33,6 +36,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.buttons {
+  @include respond(largeMobile) {
+    margin-top: 2rem;
+  }
+}
+
 .content {
   margin: 0 auto;
   margin-top: 5rem;
@@ -41,7 +50,7 @@ export default {
   display: flex;
   flex-direction: row;
 
-  @include respond(largeMobile){
+  @include respond(largeMobile) {
     margin-top: 0rem;
     height: 90vh;
   }
@@ -52,37 +61,27 @@ export default {
     display: flex;
     align-items: center;
 
+    @include respond(largeMobile) {
+      width: 90%;
+      margin: 0 auto;
+    }
+
     h1 {
       font-weight: 600;
-      font-size: 5rem;
-
-      @include respond(big-desktop) {
-        font-size: 4rem;
-      }
-
-      @include respond(medium){
-        font-size: 2.8rem;
-      }
+      font-size: clamp(2.8rem, 5vh, 12rem);
 
       @include respond(largeMobile){
-        font-size: 2rem;
+        margin-top: 5rem;
       }
     }
 
     p {
       font-weight: 200;
-      font-size: 2.8rem;
-
-      @include respond(big-desktop) {
-        font-size: 2rem;
-      }
-
-      @include respond(medium){
-        font-size: 1.8rem;
-      }
+      font-size: clamp(1.5rem, 2.5vh, 7rem);
+      align-self: flex-start;
 
       @include respond(largeMobile){
-        font-size: 1.5rem;
+        margin-top: 2rem;
       }
     }
 
@@ -102,6 +101,10 @@ export default {
     flex-grow: 1;
     display: flex;
     position: relative;
+
+    @include respond(largeMobile){
+      display: none;
+    }
   }
   &__border{
     display: flex;
@@ -109,9 +112,6 @@ export default {
     height: 60%;
     width: 90%;
     align-self: center;
-    @include respond(mobile){
-      //height: 30%;
-    }
 
     &::after{
       content: "";
@@ -122,43 +122,6 @@ export default {
       height: 100%;
       border: .3rem solid white;
       transform: skewX(14deg);
-
-      @include respond(largeMobile){
-        height: 60%;
-        transform: skewX(10deg);
-        top: 25%;
-        left: 25%;
-      }
-
-      //@media screen and (max-width:1400px){
-      //  transform: skewX(13deg);
-      //}
-      //
-      //@media screen and (max-width:1400px) and (max-height: 600px){
-      //  transform: skewX(17deg);
-      //}
-      //@media screen and (max-width:1400px) and (max-height: 500px){
-      //  transform: skewX(18deg);
-      //}
-
-      //@include respond(big-desktop){
-      //  transform: skewX(15deg);
-      //}
-
-      //@include respond(medium){
-      //  transform: skewX(10deg);
-      //}
-      //@media screen and (max-width:1000px){
-      //  transform: skewX(9deg);
-      //}
-
-      //@include respond(largeMobile){
-      //  //height: 40%;
-      //  //top: 35%;
-      //}
-      //@include respond(mobile){
-      //  //transform: skewX(8deg);
-      //}
     }
   }
   &__image {

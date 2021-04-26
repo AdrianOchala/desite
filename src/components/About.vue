@@ -62,36 +62,16 @@ export default {
 
     h1 {
       font-weight: 600;
-      font-size: 5rem;
-
-      @include respond(big-desktop) {
-        font-size: 4rem;
-      }
-
-      @include respond(medium) {
-        font-size: 2.8rem;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 2.4rem;
-      }
+      font-size: clamp(2.8rem, 5vh, 12rem);
     }
 
     p {
       font-weight: 200;
-      font-size: 2.5rem;
-
-      @include respond(big-desktop) {
-        font-size: 2rem;
-      }
-
-      @include respond(medium) {
-        font-size: 1.8rem;
-      }
+      font-size: clamp(1rem, 2.5vh, 7rem);
 
       @include respond(largeMobile) {
-        font-size: 1.5rem;
         width: 90%;
+        font-size: clamp(1rem, 2vh, 7rem);
       }
     }
 

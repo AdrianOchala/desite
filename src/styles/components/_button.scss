@@ -6,7 +6,7 @@ $gradient: #6619b3;
   border: solid white;
   border-width: 0 0 .15rem 0;
   display: inline-block;
-  width: 2.5rem;
+  width: 2.5vh;
   margin-left: .5rem;
   transition: all 1s;
 
@@ -19,8 +19,8 @@ $gradient: #6619b3;
   border: solid white;
   border-width: 0 0 .15rem 0;
   display: inline-block;
-  width: 1rem;
-  margin-left: .5rem;
+  width: 1.5vh;
+  margin-left: .3rem;
   transform: translateX(-1.45rem) translateY(-.4rem) rotate(45deg) ;
   transition: all 1s;
 }
@@ -30,10 +30,10 @@ $gradient: #6619b3;
   display: inline-block;
   position: relative;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2.2vh, 8rem);
   font-weight: 300;
   padding: 1.5rem 2.5rem 1.5rem 4rem;
-  margin: 3rem 5rem;
+  margin-top: 2rem;
   //border: .1rem solid white;
   box-sizing: border-box;
   border: 0;
@@ -46,12 +46,10 @@ $gradient: #6619b3;
 
   @include respond(medium){
     margin: 1.5rem 1rem;
-    font-size: 1.6rem;
   }
 
   @include respond(largeMobile){
     margin: 1rem 0rem;
-    font-size: 1.2rem;
     padding: 1rem 2.5rem;
   }
 
