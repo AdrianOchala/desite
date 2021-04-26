@@ -16,7 +16,7 @@
         <p class="content__text-description">
           {{ $t('about.description') }}
         </p>
-        <Button :text=" $t('about.contact') " href="#contact"></Button>
+        <Button :text=" $t('about.contact') " href="#contact" v-scroll-to="'#contact'"></Button>
       </div>
     </div>
   </div>

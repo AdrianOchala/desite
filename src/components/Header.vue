@@ -10,8 +10,8 @@
         </p>
 
         <div class="buttons">
-          <Button style="margin-right: 2rem;" :text="$t('header.about')" href="#about"></Button>
-          <Button :text="$t('header.projects')" href="#portfolio"></Button>
+          <Button style="margin-right: 2rem;" :text="$t('header.about')" href="#about" v-scroll-to="'#about'"></Button>
+          <Button :text="$t('header.projects')" href="#portfolio" v-scroll-to="'#portfolio'"></Button>
         </div>
 
       </div>
