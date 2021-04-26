@@ -3,10 +3,10 @@
     <a class="logo" href="#" @click="scrollTo(0, 0)">DESITE</a>
 
     <nav>
-      <a class="links active" href="#home">{{ $t("navigation.home") }}</a>
-      <a class="links" href="#about">{{ $t("navigation.about") }}</a>
-      <a class="links" href="#portfolio">{{ $t("navigation.portfolio") }}</a>
-      <a class="links" href="#contact">{{ $t("navigation.contact") }}</a>
+      <a class="links active" href="#home" v-scroll-to="'#home'">{{ $t("navigation.home") }}</a>
+      <a class="links" href="#about" v-scroll-to="'#about'">{{ $t("navigation.about") }}</a>
+      <a class="links" href="#portfolio" v-scroll-to="'#portfolio'">{{ $t("navigation.portfolio") }}</a>
+      <a class="links" href="#contact" v-scroll-to="'#contact'">{{ $t("navigation.contact") }}</a>
       <select v-model="selected">
         <option value="pl">PL</option>
         <option value="en">EN</option>
@@ -73,11 +73,6 @@ export default {
           list.classList.remove('active');
         }
       });
-    },
-    removeHash() {
-      setTimeout(() => {
-        history.replaceState('', document.title, window.location.origin + window.location.pathname + window.location.search);
-      }, 5);
     }
   },
   mounted() {
@@ -88,7 +83,6 @@ export default {
       this.selected = localStorage.getItem("locale") || "pl";
     }
     window.addEventListener('scroll', this.addActive);
-    window.addEventListener('click', this.removeHash);
   },
   unmounted() {
     window.removeEventListener('scroll', this.addActive);
@@ -97,9 +91,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/abstract/variables";
-@import "src/styles/abstract/mixins";
-
 .logo {
   font-family: Montserrat, sans-serif;
   font-weight: 800;

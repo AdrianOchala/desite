@@ -8,6 +8,7 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import { languages, defaultLocale } from "@/assets/i18n/index";
 import Toaster from "@incuca/vue3-toaster";
 
+const VueScrollTo = require('vue-scrollto');
 const messages = Object.assign(languages);
 
 library.add(faFacebookSquare, faLinkedin, faEnvelope, faMobileAlt, faBars);
@@ -20,6 +21,20 @@ app.use(createI18n({
     fallbackLocale: 'pl',
     messages
 }));
+
+app.use(VueScrollTo, {
+    container: "body",
+    duration: 700,
+    easing: "ease-out",
+    offset: 0,
+    force: true,
+    cancelable: false,
+    onStart: false,
+    onDone: false,
+    onCancel: false,
+    x: false,
+    y: true
+})
 
 app.use(Toaster);
 

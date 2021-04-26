@@ -88,9 +88,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/abstract/variables";
-@import "../styles/abstract/mixins";
-
 .full {
   display: flex;
   margin-top: 10rem;

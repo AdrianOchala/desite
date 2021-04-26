@@ -49,9 +49,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/styles/abstract/variables";
-@import "src/styles/abstract/mixins";
-
 .portfolio {
   height: 100vh;
   display: flex;

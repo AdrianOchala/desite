@@ -34,7 +34,6 @@ export default {
 
 <style lang="scss">
 @import "styles/base/_base.scss";
-@import "styles/base/typography";
-@import "styles/abstract/mixins";
+
 
 </style>

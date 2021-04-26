@@ -11,5 +11,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/components/button";
 </style>

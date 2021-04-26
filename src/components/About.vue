@@ -33,9 +33,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/styles/abstract/mixins";
-@import "src/styles/components/button";
-
 .content {
   margin: 0 auto;
   margin-top: 5rem;
