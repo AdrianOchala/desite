@@ -19,44 +19,24 @@
       </div>
 
       <div class="contact-social">
+
         <h2>{{ $t("contact.follow") }}</h2>
-        <p>{{ $t('contact.social.description') }}</p>
         <div class="contact-social-icons">
           <font-awesome-icon class="icon" :icon="['fab', 'facebook-square']"/>
           <font-awesome-icon class="icon" :icon="['fab', 'linkedin']"/>
         </div>
+
+        <div class="contact-social-ds">
+          <h3>{{ $t("contact.call") }}</h3>
+          <p>+48 79700712</p>
+          <p>+48 79700712</p>
+          <h3>{{ $t("contact.alsoText") }}</h3>
+          <p>desite@hosting.com</p>
+        </div>
+
+
       </div>
     </div>
-
-<!--    <div class="contact_us">-->
-<!--      <div class="contact_us-person">-->
-<!--        <h3>Szymon Wójcik</h3>-->
-
-<!--        <div class="contact_us-person-detail">-->
-<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>-->
-<!--          <p>+(48) 794 700 712</p>-->
-<!--        </div>-->
-
-<!--        <div class="contact_us-person-detail">-->
-<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>-->
-<!--          <p>wojcik.szymon1@gmail.com</p>-->
-<!--        </div>-->
-<!--      </div>-->
-
-<!--      <div class="contact_us-person">-->
-<!--        <h3>Adrian Ochała</h3>-->
-
-<!--        <div class="contact_us-person-detail">-->
-<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'mobile-alt']"/>-->
-<!--          <p>+(48) 512 390 104</p>-->
-<!--        </div>-->
-
-<!--        <div class="contact_us-person-detail">-->
-<!--          <font-awesome-icon class="contact_us-person-icon" :icon="['fas', 'envelope']"/>-->
-<!--          <p>ochala.adrian@gmail.com</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
   </div>
 
 </template>
@@ -158,7 +138,6 @@ export default {
     @include respond(medium) {
       width: 100%;
       margin-top: 1rem;
-      flex-direction: column;
       border-bottom: 1px solid #FFFF;
     }
   }
@@ -252,32 +231,20 @@ export default {
   }
 
   &-social {
+    border-left: 1px solid #FFFFFF;
     display: flex;
     flex-direction: column;
     flex: 1;
-    border-left: 1px solid #FFFFFF;
+
+    @include respond(medium) {
+      border-left: none;
+      font-size: 6vh;
+    }
 
     h2 {
       font-weight: 600;
-      font-size: 5rem;
-      text-align: center;
-      margin: 4rem 0;
-
-      @include respond(medium) {
-        font-size: 3rem;
-        margin: 1rem 0;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 2.5rem;
-      }
-    }
-
-    p {
-      font-weight: 200;
-      font-size: 2rem;
-      margin: 0 auto;
-      width: 70%;
+      width: 100%;
+      font-size: clamp(2.5rem, 6vh, 12rem);
 
       @include respond(medium) {
         display: none;
@@ -285,95 +252,56 @@ export default {
     }
 
     &-icons {
-      display: flex;
-      flex-grow: 1;
-      font-size: 6rem;
-      align-items: flex-end;
-      margin-bottom: 5rem;
-      justify-content: space-evenly;
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: center;
+      grid-gap: 3rem;
+      font-size: 8vh;
 
       @include respond(medium) {
-        margin-bottom: 1rem;
-      }
-
-      @include respond(largeMobile) {
-        font-size: 4.5rem;
+        font-size: 6vh;
+        margin-top: 2rem;
       }
 
       .icon {
         cursor: pointer;
-        transition: all .5s;
+        transition: all .6s ease-in;
 
-        &:hover, &:active {
-          font-size: 8rem;
-          border: 2px solid $color-purple;
+        &:hover {
+          transform: rotate(30deg);
         }
+
+        &:active {
+          border: 3px solid white;
+        }
+      }
+    }
+
+    &-ds {
+      width: 80%;
+      align-self: center;
+      margin-top: 5rem;
+
+      @include respond(medium) {
+        margin-top: 1rem;
+      }
+
+      h3 {
+        font-size: clamp(1rem, 2vh, 8rem);
+        text-align: center;
+      }
+
+      p {
+        font-size: 2vh;
+        text-align: center;
+        color: $color-grey;
+      }
+
+      @include respond(medium) {
+        margin-bottom: 2rem;
       }
     }
   }
-
-  &_us {
-    display: flex;
-    width: 90vw;
-    padding: 2rem;
-    justify-content: space-evenly;
-    border: 1px solid #FFFFFF;
-
-    @include respond(largeMobile) {
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-    }
-
-    h3 {
-      font-size: 2.5rem;
-
-      @include respond(largeMobile) {
-        font-size: 2rem;
-      }
-    }
-
-    &-person {
-      text-align: center;
-      border: 1px solid #FFFFFF;
-      padding: 1rem;
-      width: 40rem;
-
-      @include respond(largeMobile) {
-        padding: .5rem;
-        width: 30rem;
-      }
-
-
-      &-icon {
-        font-size: 2rem;
-        opacity: .5;
-
-        @include respond(largeMobile) {
-          font-size: 1.5rem;
-        }
-      }
-
-      &-detail {
-        display: flex;
-        font-size: 1.5rem;
-        align-items: center;
-        justify-content: center;
-
-        @include respond(largeMobile) {
-          font-size: 1.2rem;
-        }
-
-        p {
-          font-family: Mulish, sans-serif;
-          margin-left: .5rem;
-          font-weight: 200;
-        }
-      }
-    }
-
-  }
-
 }
 
 </style>

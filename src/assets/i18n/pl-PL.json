@@ -5,6 +5,8 @@
 		"title": "O nas"
 	},
 	"contact": {
+		"alsoText": "lub napisać bezpośrednio",
+		"call": "Możesz także zadzwonić!",
 		"contact": "Kontakt",
 		"email": "Twój E-mail (wymagany)",
 		"error": "Wiadomość nie została wysłana",

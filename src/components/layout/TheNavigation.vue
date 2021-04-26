@@ -14,6 +14,10 @@
     </nav>
 
     <div class="hamburger-mobile">
+      <select v-model="selected">
+        <option value="pl">PL</option>
+        <option value="en">EN</option>
+      </select>
       <font-awesome-icon @click="toggleHamburger" class="hamburger-mobile-icon" icon="bars" :style="{ color: 'green' }"></font-awesome-icon>
     </div>
 
@@ -99,7 +103,7 @@ export default {
 .logo {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 1.5vh, 4rem);
   text-decoration: none;
 }
 
@@ -167,7 +171,7 @@ export default {
 }
 
 nav {
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 1.5vh, 3rem);
   display: grid;
   grid-auto-flow: column;
   grid-gap: 3rem;
@@ -219,10 +223,16 @@ option {
   grid-auto-flow: column;
   flex: 1;
   justify-content: flex-end;
+  align-items: center;
 
   @media only screen and (min-width: 600px) {
     display: none;
   };
+
+  select {
+    margin-right: 1rem;
+
+  }
 
 
   &:hover {
@@ -230,7 +240,7 @@ option {
   }
 
   &-icon {
-
+  font-size: 3rem;
     &:active {
       transform: translateY(2px);
     }
