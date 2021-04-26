@@ -1,54 +1,45 @@
 <template>
   <div class="portfolio">
     <h2 class="portfolio-title">{{ $t('portfolio.title') }}</h2>
-    <Carousel class="portfolio_carousel" :items-to-show="2.5" :wrap-around="true">
-      <Slide v-for="slide in slide" :key="slide">
-        <div class="portfolio_box">
-          <img class="portfolio_box" :class="slide.class" :src="require(`../images/portfolio/${slide.img}`)">
-          <button @click="goToUrl(slide.url)" class="portfolio-visit">{{ $t('portfolio.visit') }}</button>
+    <div class="portfolio-projects">
+      <div class="portfolio-project" v-for="(project, i) in projects" v-bind:key="i">
+          <img :src='project.url' alt="Portfolio project">
+        <div class="portfolio-project-info">
+          <h1>{{project.name}}</h1>
+          <h2>{{project.technology}}</h2>
+          <button>Odwiedź</button>
         </div>
-      </Slide>
-
-      <template #addons>
-        <Navigation/>
-      </template>
-    </Carousel>
+      </div>
+    </div>
   </div>
 
 </template>
 
 <script>
-import {Carousel, Navigation, Slide} from 'vue3-carousel';
-
 export default {
   name: "Portfolio",
-  components: {
-    Carousel,
-    Slide,
-    Navigation,
-  },
   data() {
     return {
-      currentSlide: null,
-    slide: [
-      { img: "lapiemy-szczyty.png"},
-      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
-      { img: "lapiemy-szczyty.png"},
-      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
-      { img: "lapiemy-szczyty.png"},
-      { img: "termobudowa.png", class: "portfolio_box-Z", url: "http://termobudowa.com.pl"},
-    ]
+      projects:[
+        {url: require('../images/portfolio/laptop1re.jpg'), name: "Termobudowa",
+        technology: "HTML, CSS, JS, Vue.js"},
+        {url: require('../images/portfolio/laptop2re.jpg'), name: "Lapiemy-Szczyty",
+          technology: "HTML, CSS, JS, Vue.js"},
+        {url: require('../images/portfolio/laptop2re.jpg'), name: "Desite"},
+        {url: require('../images/portfolio/laptop2re.jpg')},
+      ]
     }
-  },
-  methods: {
-    goToUrl(url) {
-      window.location.href = url;
     }
-  }
+  // methods: {
+  //   // goToUrl(url) {
+  //   //   window.location.href = url;
+  //   // }
+  // }
 }
 </script>
 
 <style lang="scss">
+@import "src/styles/components/button";
 .portfolio {
   height: 100vh;
   display: flex;
@@ -69,176 +60,83 @@ export default {
     font-weight: 600;
     font-size: 3rem;
   }
-
-  &_carousel {
-    margin: 0 auto;
-    width: 60%;
-
-    @media only screen and (max-width: 1400px) {
-      width: 90%;
-    }
+  &-projects{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    //grid-row-gap: 5rem;
+    grid-column-gap: 7.5vw;
+    grid-row-gap: 7.5vw;
+    width: 90vw;
   }
 
-
-  &_box {
-    height: 50rem;
-    width: auto;
+  &-project{
+    width: clamp(1rem, 25vw, 300rem);
+    height: clamp(1rem, 25vw, 300rem);
     position: relative;
-    transition: all 1s;
-
-    @media only screen and (max-width: 910px) {
-      height: auto;
-      width: 23rem;
+    overflow: hidden;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .3));
+      transition: all 1s;
     }
-
-    @media only screen and (max-width: 600px) {
-      height: auto;
-      width: 16rem;
+    //Wysunięcie z lewej strony
+    &:hover::after{
+      width: 100%;
     }
-
-
-    &:hover button {
-      display: block;
+    img{
+      width: 100%;
+      height: 100%;
     }
+    //Ramka dla pojedynczego projektu
+    &::before{
+      content: "";
+      position: absolute;
+      top: -2.5%;
+      left: -2.5%;
+      width: 105%;
+      height: 105%;
+      border: .3rem solid white;
+    }
+    //Umiejscowienie opisu projektu
+    &-info{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      padding: 1rem;
+      z-index: 10;
+      transform: translateX(-100%);
+      transition: all 1s;
 
-    &:hover img {
-      filter: grayscale(100%);
-      opacity: .5;
+      button{
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        font-size: clamp(1.5rem, 2.2vh, 8rem);
+        font-weight: 300;
+        color: white;
+        padding: 1.5rem 2rem;
+        margin-top: 2rem;
+        background-color: rgba(0,0,0,.4);
+        box-sizing: border-box;
+        border: 0;
+        box-shadow: inset 0 0 0 .2rem white;
+        transition: all .2s;
+
+        &:hover{
+          font-weight: 400;
+          font-size: clamp(1.5rem, 2.3vh, 8rem);
+          box-shadow: inset 0 0 0 .4rem $color-purple;
+        }
+      }
+    }
+    &:hover &-info{
+      transform: translateX(0);
     }
   }
-
-  &_box-Z {
-    transform: perspective(400px) translateZ(-100px);
-  }
-
-  &-visit {
-    display: none;
-    position: absolute;
-    bottom: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
-    color: $color-purple;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, .5);
-    border: 3px solid $color-purple;
-    transition: all 1s;
-    border-radius: 5px;
-    letter-spacing: .2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-
-    @media only screen and (max-width: 910px) {
-      font-size: 1.5rem;
-      padding: .5rem;
-
-    }
-
-    @media only screen and (max-width: 600px) {
-      font-size: .7rem;
-      padding: .5rem;
-    }
-
-    &:hover {
-      background-color: rgba(255, 255, 255, .7);
-    }
-
-    &:active {
-      background-color: #FFFF;
-    }
-  }
-
 }
-
-
-:root {
-  /* Colors */
-  --carousel-color-primary: #642afb;
-  --carousel-color-secondary: #8e98f3;
-  --carousel-color-white: #ffffff;
-
-  /* Navigation */
-  --carousel-nav-width: 30px;
-}.carousel {
-   position: relative;
-   text-align: center;
-   box-sizing: border-box;
- }
-
-.carousel * {
-  box-sizing: border-box;
-}
-
-.carousel__track {
-  display: flex;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-
-.carousel__viewport {
-  overflow: hidden;
-}
-.carousel__pagination {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-}
-.carousel__pagination-button {
-  margin: 5px;
-  width: 10px;
-  height: 5px;
-  border: 0;
-  cursor: pointer;
-  background-color: var(--carousel-color-secondary);
-}
-
-.carousel__pagination-button--active {
-  background-color: var(--carousel-color-primary);
-}
-.carousel__icon {
-  width: 1.2em;
-  height: 1.2em;
-  fill: currentColor;
-}
-.carousel__slide {
-  scroll-snap-stop: auto;
-  flex-shrink: 0;
-  margin: 0;
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.carousel__prev,
-.carousel__next {
-  display: flex;
-  background-color: $color-purple;
-  border-radius: var(--carousel-nav-width);
-  width: var(--carousel-nav-width);
-  height: var(--carousel-nav-width);
-  text-align: center;
-  font-size: calc(var(--carousel-nav-width) * 2 / 3);
-  padding: 0;
-  color: var(--carousel-color-white);
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border: 0;
-  cursor: pointer;
-}
-
-.carousel__prev {
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.carousel__next {
-  top: 50%;
-  right: 0;
-  transform: translate(50%, -50%);
-}
-
 </style>
