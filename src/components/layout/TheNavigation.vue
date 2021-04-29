@@ -142,7 +142,7 @@ export default {
     height: 1px;
     width: 100%;
     background-color: #FFFFFF;
-    opacity: .5;
+    opacity: .3;
     bottom: 0;
   }
 }
