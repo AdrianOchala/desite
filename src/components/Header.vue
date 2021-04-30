@@ -52,7 +52,6 @@ export default {
 
   @include respond(largeMobile) {
     margin-top: 0rem;
-    height: 90vh;
   }
 
   &__left {
@@ -76,9 +75,9 @@ export default {
     }
 
     p {
-      font-weight: 200;
       font-size: clamp(1.5rem, 2.5vh, 7rem);
       align-self: flex-start;
+      opacity: .7;
 
       @include respond(largeMobile){
         margin-top: 2rem;
@@ -91,7 +90,10 @@ export default {
     &-title,
     &-description {
       position: relative;
+      width: clamp(30rem, 80%, 100rem);
+      margin-bottom: 2rem;
     }
+
   }
 
   &__right {

@@ -41,37 +41,38 @@ export default {
   display: flex;
   flex-direction: row;
 
+
   @include respond(largeMobile) {
-    flex-direction: column;
     height: 90vh;
     margin-top: 0rem;
   }
 
   &__right {
-    margin-right: 1rem;
     padding: 1rem 1rem 1rem 5rem;
     height: 100%;
     width: 55%;
     display: flex;
     align-items: center;
+    margin: 0 auto;
 
     @include respond(largeMobile) {
       width: 100%;
-      align-items: flex-start;
     }
 
     h1 {
       font-weight: 600;
+      margin-bottom: clamp(2rem, 3vw, 5.7rem);
+
       font-size: clamp(2.8rem, 5vh, 12rem);
     }
 
     p {
-      font-weight: 200;
-      font-size: clamp(1rem, 2.5vh, 7rem);
+      font-size: clamp(1.5rem, 2.5vh, 7rem);
+      opacity: .7;
+      margin-bottom: 2rem;
 
       @include respond(largeMobile) {
         width: 90%;
-        font-size: clamp(1rem, 2vh, 7rem);
       }
     }
 
@@ -95,9 +96,7 @@ export default {
     justify-content: center;
 
     @include respond(largeMobile) {
-      flex: 0 1 auto;
-      justify-content: flex-end;
-      height: 100%;
+      display: none;
     }
   }
 
@@ -128,10 +127,7 @@ export default {
       }
 
       @include respond(largeMobile) {
-        width: 90%;
-        height: 70%;
-        top: 20%;
-        transform: skewX(-12deg);
+        display: none;
       }
     }
   }
@@ -147,8 +143,7 @@ export default {
     clip-path: polygon(20% 0, 100% 0, 80% 100%, 0 100%);
 
     @include respond(largeMobile) {
-      background-image: linear-gradient(rgba(0, 115, 251, .4), rgba(255, 43, 196, .4)), url("../images/about-mobile-image.jpg");
-      clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+      display: none;
     }
 
     @include respond(medium) {

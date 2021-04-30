@@ -45,7 +45,8 @@ export default {
   padding-top: 10vh;
 
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 5.7rem;
+    font-weight: 600;
     text-align: center;
     font-size: clamp(2.8rem, 5vh, 12rem);
   }
