@@ -29,10 +29,14 @@
 		"about": "About",
 		"contact": "Contact",
 		"home": "Home",
-		"portfolio": "Portfolio"
+		"portfolio": "Portfolio",
+		"work": "How do we work?"
 	},
 	"portfolio": {
 		"title": "Our projects",
 		"visit": "Visit the site"
+	},
+	"work": {
+		"title": "How do we work?"
 	}
 }

@@ -5,6 +5,7 @@
     <nav>
       <a class="links active" href="#home" v-scroll-to="'#home'">{{ $t("navigation.home") }}</a>
       <a class="links" href="#about" v-scroll-to="'#about'">{{ $t("navigation.about") }}</a>
+      <a class="links" href="#work" v-scroll-to="'#work'">{{ $t("navigation.work") }}</a>
       <a class="links" href="#portfolio" v-scroll-to="'#portfolio'">{{ $t("navigation.portfolio") }}</a>
       <a class="links" href="#contact" v-scroll-to="'#contact'">{{ $t("navigation.contact") }}</a>
       <select v-model="selected">
