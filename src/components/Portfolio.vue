@@ -30,11 +30,6 @@ export default {
       ]
     }
     }
-  // methods: {
-  //   // goToUrl(url) {
-  //   //   window.location.href = url;
-  //   // }
-  // }
 }
 </script>
 

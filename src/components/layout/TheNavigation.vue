@@ -29,6 +29,7 @@
       <div class="mobile_menu_nav">
         <a @click="toggleHamburger('home')" class="mobile_menu_nav-link">{{ $t("navigation.home") }}</a>
         <a @click="toggleHamburger('about')" class="mobile_menu_nav-link">{{ $t("navigation.about") }}</a>
+        <a @click="toggleHamburger('work')" class="mobile_menu_nav-link">{{ $t("navigation.work") }}</a>
         <a @click="toggleHamburger('portfolio')" class="mobile_menu_nav-link">{{ $t("navigation.portfolio") }}</a>
         <a @click="toggleHamburger('contact')" class="mobile_menu_nav-link">{{ $t("navigation.contact") }}</a>
       </div>

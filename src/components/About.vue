@@ -44,6 +44,7 @@ export default {
 
   @include respond(largeMobile) {
     height: 90vh;
+    width: 100%;
     margin-top: 0rem;
   }
 
