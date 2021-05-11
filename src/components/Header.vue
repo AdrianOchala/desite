@@ -49,9 +49,6 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: row;
-  transform: translateY(-100vh);
-  transition: all 2s;
-  opacity: 0;
 
   @include respond(largeMobile) {
     margin-top: 0rem;
@@ -62,6 +59,8 @@ export default {
     width: 55%;
     display: flex;
     align-items: center;
+    animation-name: moveToLeft;
+    animation-duration: 3s;
 
     @include respond(largeMobile) {
       width: 90%;
