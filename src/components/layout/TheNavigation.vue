@@ -80,8 +80,10 @@ export default {
         const height = element.offsetHeight;
         if (window.scrollY >= top - 300 && window.scrollY < top + height - 300) {
           list.classList.add('active');
+          element.classList.add('animate');
         } else {
           list.classList.remove('active');
+          element.classList.remove('animate');
         }
       });
     }

@@ -75,6 +75,8 @@ export default {
   justify-content: center;
   align-items: center;
   height: 90vh;
+  transition: all 3s;
+  opacity: 0;
 
   @include respond(largeMobile) {
     height: 90vh;

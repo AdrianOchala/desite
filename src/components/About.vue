@@ -40,7 +40,9 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: row;
-
+  transform: translateX(-100vw);
+  transition: all 2s;
+  opacity: 0;
 
   @include respond(largeMobile) {
     height: 90vh;

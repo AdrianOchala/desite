@@ -38,6 +38,8 @@ export default {
   width: 90%;
   margin: 0 auto;
   padding-top: 10vh;
+  transition: all 3s;
+  opacity: 0;
 
   h2 {
     margin-bottom: 5.7rem;

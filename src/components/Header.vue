@@ -49,6 +49,9 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  transform: translateY(-100vh);
+  transition: all 2s;
+  opacity: 0;
 
   @include respond(largeMobile) {
     margin-top: 0rem;

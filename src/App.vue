@@ -37,6 +37,4 @@ export default {
 
 <style lang="scss">
 @import "styles/base/_base.scss";
-
-
 </style>

@@ -87,6 +87,8 @@ export default {
   flex-direction: column;
   justify-content: center;
   padding-top: 10vh;
+  transition: all 3s;
+  opacity: 0;
 
   h1 {
     font-weight: 600;
