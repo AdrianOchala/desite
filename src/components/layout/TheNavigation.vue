@@ -79,9 +79,14 @@ export default {
         const top = element.offsetTop;
         const height = element.offsetHeight;
         if (window.scrollY >= top - 300 && window.scrollY < top + height - 300) {
+
           list.classList.add('active');
           element.classList.add('animate');
         } else {
+          if (href === "home") {
+            console.log('cyk')
+            element.classList.add('animateHeader');
+          }
           list.classList.remove('active');
           element.classList.remove('animate');
         }
@@ -232,6 +237,8 @@ option {
   flex: 1;
   justify-content: flex-end;
   align-items: center;
+  animation-name: navTextAnimate;
+  animation-duration: 2s;
 
   @media only screen and (min-width: 600px) {
     display: none;

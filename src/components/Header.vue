@@ -49,6 +49,7 @@ export default {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  transition: all 2s;
 
   @include respond(largeMobile) {
     margin-top: 0rem;
@@ -105,6 +106,8 @@ export default {
     flex-grow: 1;
     display: flex;
     position: relative;
+    animation-name: moveUp;
+    animation-duration: 3s;
 
     @include respond(largeMobile){
       display: none;
@@ -124,6 +127,8 @@ export default {
       left: 20%;
       width: 80%;
       height: 100%;
+      animation-name: opacityLate;
+      animation-duration: 3s;
       border: .3rem solid white;
       transform: skewX(14deg);
     }
