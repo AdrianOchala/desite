@@ -166,6 +166,8 @@ export default {
     display: block;
     height: 1px;
     width: 100%;
+    animation-name: navLineAnimate;
+    animation-duration: 1.5s;
     background-color: #FFFFFF;
     opacity: .5;
     bottom: 0;
@@ -179,6 +181,8 @@ nav {
   grid-gap: 3rem;
   flex: 1;
   justify-content: flex-end;
+  animation-name: navTextAnimate;
+  animation-duration: 3s;
 
   @include respond(mobile) {
     display: none;
