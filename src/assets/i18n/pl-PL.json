@@ -37,6 +37,16 @@
 		"visit": "Odwiedź stronę"
 	},
 	"work": {
-		"title": "Jak pracujemy?"
+		"des1": "Analiza",
+		"des2": "Projekt i webdesign",
+		"des3": "Realizacja",
+		"des4": "Wdrożenie",
+		"des5": "Rozwój",
+		"five": "Oferujemy także stałą opiekę nad stroną, edytowanie treści oraz rozwój o nowe funkcjonalności. strony/aplikacji.",
+		"four": "W tym etapie, po akceptacji klienta, aplikacja zostaje wdrożona na serwer. ",
+		"one": "Weryfikacja i analiza funkcjonalności strony, zrozumienie potrzeb klienta. Ten cel jest niezbędny do określenia następnych etapów. ",
+		"three": "Proces w którym tworzymy stronę, czyli przekształcamy cały projekt do funkcjonalnej postaci. Są do tego używane technologie jak HTML, CSS, czy JS. ",
+		"title": "Jak pracujemy?",
+		"two": "Na tym etapie wykonuje się wizualny szkielet strony na podstawie danych zebranych w fazie pierwszej, dzięki czemu graficy wiedzą, czym kierować się przy tworzeniu projektu graficznego. "
 	}
 }

@@ -37,6 +37,16 @@
 		"visit": "Visit the site"
 	},
 	"work": {
-		"title": "How do we work?"
+		"des1": "Analysis",
+		"des2": "Design and webdesign",
+		"des3": "Coding",
+		"des4": "Implementation",
+		"des5": "Development",
+		"five": "We also offer constant care of the website, content editing and development with new functionalities. website / application.",
+		"four": "At this stage, after the client's approval, the application is deployed to the server.",
+		"one": "Verification and analysis, customer understanding. This goal is necessary for next steps.",
+		"three": "The process by which we create a website, i.e. transform the entire project into a functional form. Technologies such as HTML, CSS or JS are used for this.",
+		"title": "How do we work?",
+		"two": "At this stage, a visual skeleton of the website is made based on the data collected in the first phase, thanks to which the graphic designers know what to consider when creating a graphic design."
 	}
 }

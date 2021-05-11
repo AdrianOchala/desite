@@ -7,12 +7,11 @@
         <div class="steps-number-1">
           <h3>1</h3>
         </div>
-        <h2>Analiza</h2>
+        <h2>{{ $t('work.des1') }}</h2>
 
         <div class="step-text">
           <p>
-            Weryfikacja i analiza funkcjonalności strony, zrozumienie potrzeb klienta. Ten cel jest niezbędny do
-            określenia następnych etapów.
+            {{ $t('work.one') }}
           </p>
         </div>
 
@@ -22,11 +21,10 @@
         <div class="steps-number-2">
           <h3>2</h3>
         </div>
-        <h2>Projekt i webdesign</h2>
+        <h2>{{ $t('work.des2') }}</h2>
         <div class="step-text">
           <p>
-            Na tym etapie wykonuje się wizualny szkielet strony na podstawie danych zebranych w fazie pierwszej, dzięki
-            czemu graficy wiedzą, czym kierować się przy tworzeniu projektu graficznego.
+            {{ $t('work.two') }}
           </p>
         </div>
       </div>
@@ -35,11 +33,10 @@
         <div class="steps-number-1">
           <h3>3</h3>
         </div>
-        <h2>Realizacja</h2>
+        <h2>{{ $t('work.des3') }}</h2>
         <div class="step-text">
           <p>
-            Proces w którym tworzymy stronę, czyli przekształcamy cały projekt do funkcjonalnej postaci. Są do tego
-            używane technologie jak HTML, CSS, czy JS.
+            {{ $t('work.three') }}
           </p>
         </div>
       </div>
@@ -48,10 +45,10 @@
         <div class="steps-number-2">
           <h3>4</h3>
         </div>
-        <h2>Wdrożenie</h2>
+        <h2>{{ $t('work.des4') }}</h2>
         <div class="step-text">
           <p>
-            W tym etapie, po akceptacji klienta, aplikacja zostaje wdrożona na serwer.
+            {{ $t('work.four') }}
           </p>
         </div>
       </div>
@@ -60,11 +57,10 @@
         <div class="steps-number-1">
           <h3>5</h3>
         </div>
-        <h2>Rozwój</h2>
+        <h2>{{ $t('work.des5') }}</h2>
         <div class="step-text">
           <p>
-            Oferujemy także stałą opiekę nad stroną, edytowanie treści oraz rozwój o nowe funkcjonalności.
-            strony/aplikacji
+            {{ $t('work.five') }}
           </p>
         </div>
       </div>
