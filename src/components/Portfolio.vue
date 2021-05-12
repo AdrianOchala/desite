@@ -53,9 +53,9 @@ export default {
     width: 70%;
     //grid-gap: 5rem;
     grid-row-gap: 2rem;
-    grid-column-gap: 6vw;
+    grid-column-gap: 8vw;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
     margin: 0 auto;
 
     &_item {
