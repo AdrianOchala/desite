@@ -1,40 +1,44 @@
 <template>
-  <div class="nav" id="nav">
-    <a class="logo" href="#" @click="scrollTo(0, 0)">DESITE</a>
+  <div class="container">
 
-    <nav>
-      <a class="links active" href="#home" v-scroll-to="'#home'">{{ $t("navigation.home") }}</a>
-      <a class="links" href="#about" v-scroll-to="'#about'">{{ $t("navigation.about") }}</a>
-      <a class="links" href="#work" v-scroll-to="'#work'">{{ $t("navigation.work") }}</a>
-      <a class="links" href="#portfolio" v-scroll-to="'#portfolio'">{{ $t("navigation.portfolio") }}</a>
-      <a class="links" href="#contact" v-scroll-to="'#contact'">{{ $t("navigation.contact") }}</a>
-      <select v-model="selected">
-        <option value="pl">PL</option>
-        <option value="en">EN</option>
-      </select>
-    </nav>
+    <div class="nav" id="nav">
+      <a class="logo" href="#" @click="scrollTo(0, 0)">DESITE</a>
 
-    <div class="hamburger-mobile">
-      <select v-model="selected">
-        <option value="pl">PL</option>
-        <option value="en">EN</option>
-      </select>
-      <font-awesome-icon @click="toggleHamburger" class="hamburger-mobile-icon" icon="bars" :style="{ color: 'green' }"></font-awesome-icon>
-    </div>
+      <nav>
+        <a class="links active" href="#home" v-scroll-to="'#home'">{{ $t("navigation.home") }}</a>
+        <a class="links" href="#about" v-scroll-to="'#about'">{{ $t("navigation.about") }}</a>
+        <a class="links" href="#work" v-scroll-to="'#work'">{{ $t("navigation.work") }}</a>
+        <a class="links" href="#portfolio" v-scroll-to="'#portfolio'">{{ $t("navigation.portfolio") }}</a>
+        <a class="links" href="#contact" v-scroll-to="'#contact'">{{ $t("navigation.contact") }}</a>
+        <select v-model="selected">
+          <option value="pl">PL</option>
+          <option value="en">EN</option>
+        </select>
+      </nav>
 
-  </div>
-
-  <transition name="fade">
-    <div v-if="mobileActive" class="mobile_menu">
-      <div class="mobile_menu_nav">
-        <a @click="toggleHamburger('home')" class="mobile_menu_nav-link">{{ $t("navigation.home") }}</a>
-        <a @click="toggleHamburger('about')" class="mobile_menu_nav-link">{{ $t("navigation.about") }}</a>
-        <a @click="toggleHamburger('work')" class="mobile_menu_nav-link">{{ $t("navigation.work") }}</a>
-        <a @click="toggleHamburger('portfolio')" class="mobile_menu_nav-link">{{ $t("navigation.portfolio") }}</a>
-        <a @click="toggleHamburger('contact')" class="mobile_menu_nav-link">{{ $t("navigation.contact") }}</a>
+      <div class="hamburger-mobile">
+        <select v-model="selected">
+          <option value="pl">PL</option>
+          <option value="en">EN</option>
+        </select>
+        <font-awesome-icon @click="toggleHamburger" class="hamburger-mobile-icon" icon="bars"
+                           :style="{ color: 'green' }"></font-awesome-icon>
       </div>
+
     </div>
-  </transition>
+
+    <transition name="fade">
+      <div v-if="mobileActive" class="mobile_menu">
+        <div class="mobile_menu_nav">
+          <a @click="toggleHamburger('home')" class="mobile_menu_nav-link">{{ $t("navigation.home") }}</a>
+          <a @click="toggleHamburger('about')" class="mobile_menu_nav-link">{{ $t("navigation.about") }}</a>
+          <a @click="toggleHamburger('work')" class="mobile_menu_nav-link">{{ $t("navigation.work") }}</a>
+          <a @click="toggleHamburger('portfolio')" class="mobile_menu_nav-link">{{ $t("navigation.portfolio") }}</a>
+          <a @click="toggleHamburger('contact')" class="mobile_menu_nav-link">{{ $t("navigation.contact") }}</a>
+        </div>
+      </div>
+    </transition>
+  </div>
 
 </template>
 
@@ -109,6 +113,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  display: flex;
+  justify-content: center;
+}
 .logo {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
@@ -138,10 +146,7 @@ export default {
   display: flex;
   width: 100vw;
   position: fixed;
-  top: 0;
-  left: 50%;
   padding: 2rem 0;
-  transform: translateX(-50%);
   transition: all 1s ease-in;
   z-index: 9999;
   background-color: rgba(0, 0, 0, 0.3);
@@ -177,10 +182,7 @@ export default {
   display: flex;
   width: 90vw;
   position: fixed;
-  top: 0;
-  left: 50%;
   padding: 4rem 0;
-  transform: translateX(-50%);
   transition: all 1s ease-in;
   z-index: 9999;
 
@@ -274,7 +276,8 @@ option {
   }
 
   &-icon {
-  font-size: 3rem;
+    font-size: 3rem;
+
     &:active {
       transform: translateY(2px);
     }
@@ -307,7 +310,7 @@ option {
       font-weight: 300;
       text-decoration: none;
       font-size: 3rem;
-      color: rgba(255,255,255, .7);
+      color: rgba(255, 255, 255, .7);
       position: relative;
       cursor: pointer;
 
@@ -344,7 +347,9 @@ option {
   transform: translateX(0);
   transition: all .5s ease-in;
 }
-.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter-from, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
   opacity: 0;
   transform: translateX(400px);
 }
