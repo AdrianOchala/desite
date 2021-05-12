@@ -114,6 +114,8 @@ export default {
   font-weight: 800;
   font-size: clamp(1.4rem, 1.5vh, 4rem);
   text-decoration: none;
+  transition: all 1s ease-in;
+  align-self: center;
 }
 
 .active {
@@ -134,7 +136,7 @@ export default {
 
 .scrolling {
   display: flex;
-  width: 90vw;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 50%;
@@ -142,7 +144,7 @@ export default {
   transform: translateX(-50%);
   transition: all 1s ease-in;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 
   &::after {
     content: "";
@@ -153,6 +155,21 @@ export default {
     background-color: #FFFFFF;
     opacity: .3;
     bottom: 0;
+  }
+
+  nav {
+    margin-right: 5vw;
+    transition: all 1s ease-in;
+  }
+
+  .logo {
+    transition: all 1s ease-in;
+    margin-left: 5vw;
+  }
+
+  .hamburger-mobile {
+    margin-right: 5vw;
+    transition: all 1s ease-in;
   }
 }
 
@@ -190,6 +207,7 @@ nav {
   justify-content: flex-end;
   animation-name: navTextAnimate;
   animation-duration: 2s;
+  transition: all 1s ease-in;
 
   @include respond(mobile) {
     display: none;
@@ -239,6 +257,7 @@ option {
   align-items: center;
   animation-name: navTextAnimate;
   animation-duration: 2s;
+  transition: all 1s ease-in;
 
   @media only screen and (min-width: 600px) {
     display: none;
