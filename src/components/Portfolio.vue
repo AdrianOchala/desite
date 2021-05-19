@@ -51,12 +51,15 @@ export default {
   &_project {
     display: grid;
     width: 70%;
-    //grid-gap: 5rem;
-    grid-row-gap: 2rem;
+    grid-row-gap: 2vh;
     grid-column-gap: 8vw;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr) );
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     margin: 0 auto;
+
+    @include respond(mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 
     &_item {
       position: relative;
@@ -87,12 +90,12 @@ export default {
 
         h1 {
           font-weight: 600;
-          font-size: clamp(2.8rem, 3vh, 12rem);
+          font-size: clamp(2.8rem, 3vh, 6rem);
         }
 
         p {
           font-weight: 400;
-          font-size: clamp(1rem, 2.5vh, 7rem);
+          font-size: clamp(1rem, 2.5vh, 4rem);
         }
 
         button{
