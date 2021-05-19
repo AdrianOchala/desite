@@ -131,6 +131,8 @@ export default {
       animation-duration: 3s;
       border: .3rem solid white;
       transform: skewX(14deg);
+
+      @media only screen and (max-width: 800px) { transform: skewX(13deg); };
     }
   }
   &__image {

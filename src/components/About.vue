@@ -121,13 +121,16 @@ export default {
       transform: skewX(-14deg);
 
       @include respond(big-desktop) {
-        transform: skewX(-8deg);
+        transform: skewX(-13deg);
       }
 
       @include respond(medium) {
-        height: 70%;
+        transform: skewX(-14deg);
+        height: 68%;
         top: 20%;
       }
+
+      @media only screen and (max-width: 800px) { transform: skewX(-12deg); };
 
       @include respond(largeMobile) {
         display: none;

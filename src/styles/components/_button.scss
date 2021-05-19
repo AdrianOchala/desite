@@ -21,7 +21,7 @@ $gradient: #6619b3;
   display: inline-block;
   width: 1.5vh;
   margin-left: .3rem;
-  transform: translateX(-1.45rem) translateY(-.4rem) rotate(45deg) ;
+  transform: translateX(-1.6vh) translateY(-.5vh) rotate(45deg) ;
   transition: all 1s;
 }
 
@@ -59,9 +59,9 @@ $gradient: #6619b3;
   }
 
   &:hover{
-      background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #0073FB -26.92%, #FF2BC4 160.26%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   &::before,
